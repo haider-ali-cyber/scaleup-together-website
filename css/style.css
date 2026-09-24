@@ -155,12 +155,13 @@ a:hover { color: var(--su-primary-dark); }
 	box-shadow: 0 4px 16px rgba(0,0,0,.06);
 }
 
-.navbar-brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+.navbar-brand { display: flex; flex-direction: column; align-items: center; gap: .15rem; text-decoration: none; }
 .brand-icon { height: 64px; width: auto; display: block; }
-.footer-brand { display: flex; align-items: center; gap: .6rem; }
+.footer-brand { display: flex; flex-direction: column; align-items: center; gap: .15rem; }
 .logo-text {
 	font-family: 'Aleo', serif; font-weight: 700; font-size: 1.15rem; color: #1c1c1c; line-height: 1.1;
 	display: flex; flex-direction: column;
+	text-align: center;
 }
 .logo-text span { font-size: .7rem; font-weight: 400; color: var(--su-body); letter-spacing: .08em; text-transform: uppercase; }
 
@@ -204,7 +205,7 @@ a:hover { color: var(--su-primary-dark); }
 	position: relative;
 	inset: auto;
 	width: 100%;
-	padding: 11rem 0 5rem;
+	padding: 14rem 0 5rem;
 	text-align: left;
 	color: inherit;
 	z-index: 2;
@@ -539,7 +540,7 @@ a:hover { color: var(--su-primary-dark); }
 /* footer */
 .site-footer { background: var(--su-bg-light); }
 .site-footer .card { border-radius: 14px; }
-.footer-brand { display: flex; align-items: center; gap: .5rem; }
+.footer-brand { display: flex; flex-direction: column; align-items: center; gap: .15rem; }
 .footer-content .nav-link { color: var(--su-body); font-size: .85rem; }
 .footer-content .nav-link:hover { color: var(--su-primary); }
 .footer-content h6 { font-size: .95rem; }
