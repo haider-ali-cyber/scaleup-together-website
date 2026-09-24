@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Tiers — ScaleUp Together</title>
+  <meta name="description" content="Choose your investment tier from $2,500 to $20,000+. Performance-based profit sharing.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo"><div class="logo-icon">ST</div><span>ScaleUp Together</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="tiers.html" class="on">Investment Tiers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://wa.me/923000000000" class="whatsapp-btn"><i data-lucide="message-circle" style="width:14px;height:14px;"></i> WhatsApp Us</a>
+      <a href="contact.html" class="btn btn-gold">Start Your Journey</a>
+      <button class="mobile-btn" aria-label="Menu"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="wrap">
+    <div class="sec-head center" style="max-width:660px;">
+      <div class="tag tag-gold">● Performance-Based Profit Sharing</div>
+      <h1 class="anim">Private Capital Investment Tiers</h1>
+      <p class="sub sub-light anim" style="margin:0 auto;">Select the allocation level that aligns with your financial goals. Higher tiers earn an increased share of net profit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIER CARDS -->
+<section class="sec sec-light">
+  <div class="wrap">
+    <div class="card-grid-4">
+      <div class="tier anim"><div class="tier-name">Starter</div><div class="tier-amt">$2,500</div><div class="tier-rows"><div class="tier-row"><span class="lbl">Client Share</span><span class="val">35%</span></div><div class="tier-row"><span class="lbl">ScaleUp Share</span><span class="val">65%</span></div></div><a href="contact.html?tier=Starter" class="btn btn-outline-dark">Select Tier</a></div>
+      <div class="tier anim"><div class="tier-name">Growth</div><div class="tier-amt">$5,000</div><div class="tier-rows"><div class="tier-row"><span class="lbl">Client Share</span><span class="val">40%</span></div><div class="tier-row"><span class="lbl">ScaleUp Share</span><span class="val">60%</span></div></div><a href="contact.html?tier=Growth" class="btn btn-outline-dark">Select Tier</a></div>
+      <div class="tier anim"><div class="tier-name">Pro</div><div class="tier-amt">$7,500</div><div class="tier-rows"><div class="tier-row"><span class="lbl">Client Share</span><span class="val">45%</span></div><div class="tier-row"><span class="lbl">ScaleUp Share</span><span class="val">55%</span></div></div><a href="contact.html?tier=Pro" class="btn btn-outline-dark">Select Tier</a></div>
+      <div class="tier pop anim"><div class="pop-badge">Preferred Tier</div><div class="tier-name">Elite</div><div class="tier-amt">$10,000</div><div class="tier-rows"><div class="tier-row"><span class="lbl">Client Share</span><span class="val" style="color:var(--gold);font-weight:700;">50%</span></div><div class="tier-row"><span class="lbl">ScaleUp Share</span><span class="val">50%</span></div></div><a href="contact.html?tier=Elite" class="btn btn-gold">Select Preferred</a></div>
+      <div class="tier anim"><div class="tier-name">Prime</div><div class="tier-amt">$12,500</div><div class="tier-rows"><div class="tier-row"><span class="lbl">Client Share</span><span class="val">55%</span></div><div class="tier-row"><span class="lbl">ScaleUp Share</span><span class="val">45%</span></div></div><a href="contact.html?tier=Prime" class="btn btn-outline-dark">Select Tier</a></div>
+      <div class="tier anim"><div class="tier-name">Institutional</div><div class="tier-amt">$15,000</div><div class="tier-rows"><div class="tier-row"><span class="lbl">Client Share</span><span class="val">60%</span></div><div class="tier-row"><span class="lbl">ScaleUp Share</span><span class="val">40%</span></div></div><a href="contact.html?tier=Institutional" class="btn btn-outline-dark">Select Tier</a></div>
+      <div class="tier anim"><div class="tier-name">Master</div><div class="tier-amt">$17,500</div><div class="tier-rows"><div class="tier-row"><span class="lbl">Client Share</span><span class="val">65%</span></div><div class="tier-row"><span class="lbl">ScaleUp Share</span><span class="val">35%</span></div></div><a href="contact.html?tier=Master" class="btn btn-outline-dark">Select Tier</a></div>
+      <div class="tier anim"><div class="tier-name">Supreme</div><div class="tier-amt">$20,000+</div><div class="tier-rows"><div class="tier-row"><span class="lbl">Client Share</span><span class="val" style="color:var(--gold);">70%</span></div><div class="tier-row"><span class="lbl">ScaleUp Share</span><span class="val">30%</span></div></div><a href="contact.html?tier=Supreme" class="btn btn-outline-dark">Select Tier</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR (Dark block) -->
+<section class="sec sec-white">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="tag tag-dark">Interactive Estimator</div>
+      <h2>Profit Share Calculator</h2>
+      <p class="sub sub-dark" style="margin:0 auto;">Estimate your net return allocation based on generated trading profit.</p>
+    </div>
+    <div class="calc anim">
+      <div class="calc-inner">
+        <div>
+          <label>Starting Capital Tier</label>
+          <div class="calc-val" id="capitalDisplay">$10,000 — Elite</div>
+          <input type="range" min="2500" max="20000" step="2500" value="10000" class="range" id="capitalSlider">
+          <label>Estimated Generated Profit</label>
+          <div class="calc-val" id="profitDisplay">$2,000</div>
+          <input type="range" min="500" max="10000" step="500" value="2000" class="range" id="profitSlider">
+        </div>
+        <div class="calc-out">
+          <div class="calc-row"><span class="lbl">Active Tier</span><span class="val" id="calcTier">Elite</span></div>
+          <div class="calc-row"><span class="lbl">Client Profit Share</span><span class="val" id="calcPct">50%</span></div>
+          <div class="calc-row"><span class="lbl">Your Estimated Profit</span><span class="hl" id="calcClient">$1,000</span></div>
+          <div class="calc-row"><span class="lbl">ScaleUp Performance Fee</span><span class="val" id="calcScaleup">$1,000</span></div>
+          <a href="contact.html" class="btn btn-gold" style="width:100%;margin-top:1rem;justify-content:center;">Apply For This Tier <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW PROFIT SHARING WORKS -->
+<section class="sec sec-light">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="tag tag-dark">How It Works</div>
+      <h2>Transparent, Performance-Based</h2>
+    </div>
+    <div class="card-grid-3">
+      <div class="card anim"><div class="card-icon"><i data-lucide="trending-up"></i></div><h4>Net-New Profit Only</h4><p>Profit sharing calculated only on new gains above your account's high-water mark.</p></div>
+      <div class="card anim"><div class="card-icon"><i data-lucide="calendar"></i></div><h4>Periodic Settlement</h4><p>Profit share crystallized and settled at agreed intervals for full clarity.</p></div>
+      <div class="card anim"><div class="card-icon"><i data-lucide="eye"></i></div><h4>Full Transparency</h4><p>Direct broker access to verify every trade, result, and fee in real-time.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="wrap">
+    <div class="tag tag-gold">Ready?</div>
+    <h2 class="anim" style="color:#fff;">Select Your Tier. Begin Your Journey.</h2>
+    <p class="sub sub-light anim">Schedule a consultation to discuss your preferred tier.</p>
+    <a href="contact.html" class="btn btn-gold anim">Book Consultation <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo"><div class="logo-icon">ST</div><span>ScaleUp Together</span></div><p>Professional Forex & Portfolio Management for Serious Investors.</p></div>
+      <div class="footer-col"><h5>Pages</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="tiers.html">Investment Tiers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Learn More</h5><ul><li><a href="index.html#capital">Client-Controlled Capital</a></li><li><a href="tiers.html">Profit Sharing</a></li><li><a href="index.html#faq">FAQ</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li>contact@scaleuptogether.com</li><li>+92 300 0000000</li><li>Lahore / Islamabad, Pakistan</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p><strong>Risk Disclosure:</strong> Trading foreign exchange carries a high level of risk. Past performance is not indicative of future results.</p>
+      <p style="margin-top:0.4rem;">&copy; 2026 ScaleUp Together. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/923000000000" class="wa-float" target="_blank" title="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+
+<script src="app.js"></script>
+</body>
+</html>
