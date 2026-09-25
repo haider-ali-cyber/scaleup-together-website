@@ -162,29 +162,22 @@ a:hover { color: var(--su-primary-dark); }
 	display: flex; flex-direction: column; align-items: flex-start;
 	text-align: left; line-height: 1.1;
 }
-.logo-text .brand-main {
-	font-family: 'Lato', sans-serif;
-	font-weight: 700;
-	font-size: 1.05rem;
-	letter-spacing: .04em;
-	text-transform: uppercase;
-	color: var(--su-secondary);
-}
+.wordmark-scaleup { height: 20px; width: auto; display: block; }
 .logo-text .brand-sub {
 	display: flex; align-items: center; justify-content: flex-start; gap: .4rem;
-	margin-top: .1rem;
-	font-family: 'Lato', sans-serif;
-	font-weight: 700;
-	font-size: .62rem;
-	letter-spacing: .22em;
+	margin-top: .15rem;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	font-size: .6rem;
+	letter-spacing: .2em;
 	text-transform: uppercase;
-	color: var(--su-primary);
+	color: #2B5C99;
 }
 .logo-text .brand-sub::before,
 .logo-text .brand-sub::after {
 	content: '';
 	width: 12px; height: 1px;
-	background: var(--su-primary);
+	background: #2B5C99;
 }
 
 .optional-link .in-icon-link { color: #1c1c1c; text-decoration: none; margin-right: 1.25rem; font-size: .9rem; font-weight: 700; }
