@@ -60,4 +60,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		counters.forEach(function (el) { observer.observe(el); });
 	}
+
+	// animated plan split bars
+	var splitFills = document.querySelectorAll('.split-fill');
+	if (splitFills.length) {
+		var fillObserver = new IntersectionObserver(function (entries) {
+			entries.forEach(function (entry) {
+				if (entry.isIntersecting) {
+					var target = entry.target.getAttribute('data-width') || 0;
+					entry.target.style.width = target + '%';
+					fillObserver.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.4 });
+		splitFills.forEach(function (el) { fillObserver.observe(el); });
+	}
+
+	// floating contact widget
+	var floatingContact = document.querySelector('.floating-contact');
+	if (floatingContact) {
+		var fcToggle = floatingContact.querySelector('.floating-contact-toggle');
+		fcToggle.addEventListener('click', function () {
+			var isOpen = floatingContact.classList.toggle('is-open');
+			fcToggle.setAttribute('aria-expanded', isOpen);
+		});
+		document.addEventListener('click', function (e) {
+			if (!floatingContact.contains(e.target)) {
+				floatingContact.classList.remove('is-open');
+				fcToggle.setAttribute('aria-expanded', 'false');
+			}
+		});
+	}
 });
