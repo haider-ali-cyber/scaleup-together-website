@@ -8,11 +8,20 @@ document.addEventListener('DOMContentLoaded', function () {
 		setTimeout(function () { loader.classList.add('loaded'); }, 1200);
 	}
 
-	// sticky header shadow on scroll
+	// sticky header shadow on scroll + auto-hide while idle
 	var header = document.querySelector('.site-header');
 	if (header) {
+		var headerHideTimer = null;
 		window.addEventListener('scroll', function () {
-			header.classList.toggle('is-scrolled', window.scrollY > 10);
+			var isScrolled = window.scrollY > 10;
+			header.classList.toggle('is-scrolled', isScrolled);
+			header.classList.remove('header-hidden');
+			clearTimeout(headerHideTimer);
+			if (isScrolled) {
+				headerHideTimer = setTimeout(function () {
+					header.classList.add('header-hidden');
+				}, 1200);
+			}
 		});
 	}
 
