@@ -22,6 +22,7 @@
 	box-sizing: border-box;
 }
 
+html { overflow-x: hidden; }
 body {
 	font-family: 'Lato', sans-serif;
 	color: var(--su-body);
@@ -646,6 +647,35 @@ a:hover { color: var(--su-primary-dark); }
 .split-labels { display: flex; justify-content: space-between; font-size: .78rem; font-weight: 700; color: var(--su-body); }
 .tier-desc { font-size: .88rem; color: var(--su-body); flex-grow: 1; }
 
+/* percent gauge — straight ruler scale with fine ticks + highlighter overlay */
+.percent-gauge { position: relative; margin-bottom: .5rem; }
+.percent-gauge-track {
+	position: relative;
+	height: 34px;
+	border-radius: 4px;
+	background-color: var(--su-bg-light);
+	background-image: repeating-linear-gradient(90deg, rgba(31,78,140,.25) 0, rgba(31,78,140,.25) 1px, transparent 1px, transparent 2%);
+	overflow: hidden;
+	box-shadow: inset 0 1px 3px rgba(20,30,50,.1);
+}
+.percent-gauge-highlight {
+	position: absolute; top: 0; left: 0; bottom: 0;
+	width: 0;
+	background: rgba(217,140,61,.4);
+	box-shadow: inset 0 0 0 1px rgba(217,140,61,.55);
+	transition: width 1.2s cubic-bezier(.22,.9,.3,1);
+}
+.percent-gauge-majors { position: relative; height: 1.4rem; margin-top: .35rem; }
+.percent-gauge-major { position: absolute; top: 0; left: 0; width: 2px; height: 6px; background: var(--su-primary); transform: translateX(-1px); }
+.percent-gauge-major.pg-start { transform: none; }
+.percent-gauge-major.pg-end { left: 100%; transform: translateX(-2px); }
+.percent-gauge-major span {
+	position: absolute; top: 10px; left: 0; transform: translateX(-50%);
+	font-size: .72rem; font-weight: 700; color: var(--su-body); white-space: nowrap;
+}
+.percent-gauge-major.pg-start span { left: 0; transform: translateX(0); }
+.percent-gauge-major.pg-end span { left: auto; right: 0; transform: translateX(0); }
+
 /* plans hero strip — futuristic summary bar */
 .plans-hero-strip {
 	position: relative;
@@ -968,6 +998,9 @@ a:hover { color: var(--su-primary-dark); }
 	.navbar-collapse { padding: 1rem 0; }
 	.dropdown-menu { border: none; padding-left: 1rem; }
 	.hero-slideshow .carousel-caption { padding: 5rem 0; }
+	.header-row { position: relative; flex-wrap: nowrap; justify-content: space-between; }
+	.header-nav-slot { position: static; order: 2; flex: 0 0 auto; width: auto; margin-top: 0; margin-left: 1rem; }
+	.header-nav-slot .navbar-collapse { position: absolute; top: 100%; left: 0; right: 0; width: 100%; background: #fff; box-shadow: 0 10px 24px rgba(20,30,50,.12); z-index: 1050; }
 }
 
 @media (max-width: 991.98px) {

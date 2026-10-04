@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	// animated plan split bars
-	var splitFills = document.querySelectorAll('.split-fill');
+	var splitFills = document.querySelectorAll('.split-fill, .percent-gauge-highlight');
 	if (splitFills.length) {
 		var fillObserver = new IntersectionObserver(function (entries) {
 			entries.forEach(function (entry) {
