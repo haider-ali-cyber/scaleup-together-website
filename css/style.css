@@ -661,9 +661,20 @@ a:hover { color: var(--su-primary-dark); }
 .percent-gauge-highlight {
 	position: absolute; top: 0; left: 0; bottom: 0;
 	width: 0;
-	background: #fff;
-	box-shadow: inset 0 0 0 2px var(--su-primary);
+	display: flex; align-items: center;
+	background: var(--su-primary);
+	box-shadow: inset 0 0 0 2px var(--su-primary-dark);
 	transition: width 1.2s cubic-bezier(.22,.9,.3,1);
+	overflow: hidden;
+}
+.percent-gauge-label {
+	font-size: .72rem; font-weight: 700; white-space: nowrap;
+	padding-left: .7rem; color: #fff;
+}
+.percent-gauge-label-rest {
+	position: absolute; top: 0; bottom: 0; right: .7rem;
+	display: flex; align-items: center;
+	color: #7a4a14;
 }
 .percent-gauge-majors { position: relative; height: 1.4rem; margin-top: .35rem; }
 .percent-gauge-major { position: absolute; top: 0; left: 0; width: 2px; height: 6px; background: var(--su-primary); transform: translateX(-1px); }
