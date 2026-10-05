@@ -653,7 +653,7 @@ a:hover { color: var(--su-primary-dark); }
 	position: relative;
 	height: 34px;
 	border-radius: 4px;
-	background-color: var(--su-bg-light);
+	background-color: rgba(217,140,61,.38);
 	background-image: repeating-linear-gradient(90deg, rgba(31,78,140,.25) 0, rgba(31,78,140,.25) 1px, transparent 1px, transparent 2%);
 	overflow: hidden;
 	box-shadow: inset 0 1px 3px rgba(20,30,50,.1);
@@ -661,8 +661,8 @@ a:hover { color: var(--su-primary-dark); }
 .percent-gauge-highlight {
 	position: absolute; top: 0; left: 0; bottom: 0;
 	width: 0;
-	background: rgba(217,140,61,.4);
-	box-shadow: inset 0 0 0 1px rgba(217,140,61,.55);
+	background: #fff;
+	box-shadow: inset 0 0 0 2px var(--su-primary);
 	transition: width 1.2s cubic-bezier(.22,.9,.3,1);
 }
 .percent-gauge-majors { position: relative; height: 1.4rem; margin-top: .35rem; }
@@ -740,11 +740,13 @@ a:hover { color: var(--su-primary-dark); }
 
 /* compact profit gauge — sits inline in the plan row header, no dark card */
 .plan-split-mini .profit-gauge { width: auto; max-width: none; }
-.plan-split-mini .profit-gauge-row { gap: .3rem; }
-.plan-split-mini .profit-gauge-dial { max-width: 70px; }
+.plan-split-mini .profit-gauge-row { gap: .4rem; }
+.plan-split-mini .profit-gauge-dial { max-width: 96px; }
 .plan-split-mini .profit-gauge-value {
 	font-size: .78rem; margin-top: -1rem; color: var(--su-primary); text-shadow: none;
 }
+.plan-split-mini .gauge-track { stroke: rgba(31,78,140,.2); }
+.plan-split-mini .gauge-track, .plan-split-mini .gauge-fill { stroke-width: 14; }
 .plan-split-mini .gauge-fill { stroke: var(--su-primary); filter: drop-shadow(0 0 2px rgba(70,133,214,.6)); animation: none; }
 .plan-split-mini .gauge-needle { fill: #1c1c1c; filter: none; }
 .plan-split-mini .gauge-pivot { fill: var(--su-secondary); filter: none; }
