@@ -759,7 +759,7 @@ a:hover { color: var(--su-primary-dark); }
 .plan-split-mini .gauge-track { stroke: rgba(31,78,140,.2); }
 .plan-split-mini .gauge-track, .plan-split-mini .gauge-fill { stroke-width: 14; }
 .plan-split-mini .gauge-fill { stroke: var(--su-primary); filter: drop-shadow(0 0 2px rgba(70,133,214,.6)); animation: none; }
-.plan-split-mini .gauge-needle { fill: #1c1c1c; filter: none; }
+.plan-split-mini .gauge-needle { fill: var(--su-primary); filter: none; }
 .plan-split-mini .gauge-pivot { fill: var(--su-secondary); filter: none; }
 .plan-split-mini .profit-gauge-flank { flex: 0 1 54px; font-size: .58rem; gap: .1rem; }
 .plan-split-mini .profit-gauge-flank strong { font-size: .8rem; color: var(--su-primary); }
