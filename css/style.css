@@ -211,7 +211,7 @@ a:hover { color: var(--su-primary-dark); }
 	display: inline-flex; align-items: center; justify-content: center;
 	width: 28px; height: 28px; color: #fff; font-size: .75rem; margin-right: .4rem;
 }
-.optional-link .icon-wrap i { transform: translateY(-1.5px); }
+.optional-link .icon-wrap i { transform: translate(3px, -1.5px); }
 /* utility bar sits over the photo while header is transparent — needs light text for contrast */
 .hero-utility-bar .in-icon-link { color: #1c1c1c; }
 .site-header.is-scrolled .hero-utility-bar .in-icon-link { color: #1c1c1c; text-shadow: none; }
@@ -676,6 +676,82 @@ a:hover { color: var(--su-primary-dark); }
 .percent-gauge-major.pg-start span { left: 0; transform: translateX(0); }
 .percent-gauge-major.pg-end span { left: auto; right: 0; transform: translateX(0); }
 
+/* profit gauge — futuristic holographic radial meter */
+.profit-gauge-card {
+	position: relative;
+	overflow: hidden;
+	border-radius: 20px;
+	padding: 1.75rem 1.25rem 1.5rem;
+	height: 100%;
+	display: flex; align-items: center; justify-content: center;
+	background:
+		radial-gradient(circle at 18% 18%, rgba(90,150,255,.3) 0%, transparent 48%),
+		radial-gradient(circle at 85% 85%, rgba(90,150,255,.22) 0%, transparent 48%),
+		var(--su-secondary);
+	box-shadow: 0 20px 45px rgba(20,30,50,.28);
+}
+.profit-gauge-card::before {
+	content: '';
+	position: absolute; inset: 0;
+	background-image: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
+	background-size: 16px 16px;
+	pointer-events: none;
+}
+.profit-gauge { position: relative; z-index: 1; width: 100%; max-width: 320px; margin: 0 auto; }
+.profit-gauge-row { display: flex; align-items: center; justify-content: center; gap: .5rem; }
+.profit-gauge-dial { position: relative; flex: 0 0 auto; width: 100%; max-width: 190px; text-align: center; }
+.profit-gauge-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.gauge-track { fill: none; stroke: rgba(255,255,255,.14); stroke-width: 12; stroke-linecap: round; }
+.gauge-fill {
+	fill: none; stroke: #5ab3ff; stroke-width: 12; stroke-linecap: round;
+	filter: drop-shadow(0 0 7px rgba(90,180,255,.85));
+	transition: stroke-dashoffset 1.3s cubic-bezier(.22,.9,.3,1);
+	animation: gauge-pulse-glow 2.4s ease-in-out infinite;
+}
+@keyframes gauge-pulse-glow {
+	0%, 100% { filter: drop-shadow(0 0 6px rgba(90,180,255,.8)); }
+	50% { filter: drop-shadow(0 0 13px rgba(90,180,255,1)); }
+}
+.gauge-needle {
+	fill: #fff; stroke: none;
+	filter: drop-shadow(0 0 4px rgba(255,255,255,.8));
+	transform-origin: 100px 100px;
+	transition: transform 1.3s cubic-bezier(.22,.9,.3,1);
+}
+.gauge-pivot { fill: #fff; filter: drop-shadow(0 0 4px rgba(255,255,255,.9)); }
+.profit-gauge-value {
+	font-family: 'Aleo', serif; font-weight: 700; font-size: 1.7rem; color: #fff;
+	text-shadow: 0 0 14px rgba(90,180,255,.8);
+	margin-top: -1.3rem; position: relative; z-index: 1;
+}
+.profit-gauge-flank {
+	flex: 0 1 76px;
+	min-width: 0;
+	display: flex; flex-direction: column; align-items: center; gap: .25rem;
+	text-align: center;
+}
+.profit-gauge-flank .flank-label {
+	display: block; width: 100%;
+	font-size: .66rem; font-weight: 700; color: rgba(255,255,255,.8);
+	text-transform: uppercase; letter-spacing: .03em; line-height: 1.25;
+}
+.profit-gauge-flank strong { font-family: 'Aleo', serif; font-size: 1.15rem; color: #fff; text-transform: none; letter-spacing: 0; }
+.profit-gauge-flank .flank-dot { display: none; }
+
+/* compact profit gauge — sits inline in the plan row header, no dark card */
+.plan-split-mini .profit-gauge { width: auto; max-width: none; }
+.plan-split-mini .profit-gauge-row { gap: .3rem; }
+.plan-split-mini .profit-gauge-dial { max-width: 70px; }
+.plan-split-mini .profit-gauge-value {
+	font-size: .78rem; margin-top: -1rem; color: var(--su-primary); text-shadow: none;
+}
+.plan-split-mini .gauge-fill { stroke: var(--su-primary); filter: drop-shadow(0 0 2px rgba(70,133,214,.6)); animation: none; }
+.plan-split-mini .gauge-needle { fill: #1c1c1c; filter: none; }
+.plan-split-mini .gauge-pivot { fill: var(--su-secondary); filter: none; }
+.plan-split-mini .profit-gauge-flank { flex: 0 1 54px; font-size: .58rem; gap: .1rem; }
+.plan-split-mini .profit-gauge-flank strong { font-size: .8rem; color: var(--su-primary); }
+.plan-split-mini .profit-gauge-flank .flank-label { font-size: .52rem; color: var(--su-body); }
+
 /* plans hero strip — futuristic summary bar */
 .plans-hero-strip {
 	position: relative;
@@ -743,19 +819,6 @@ a:hover { color: var(--su-primary-dark); }
 .plan-row .accordion-button:not(.collapsed) { background: var(--su-bg-light); box-shadow: none; color: inherit; }
 .plan-row .accordion-button:focus { box-shadow: none; border-color: transparent; }
 .plan-row .accordion-button::after { display: none; content: none; }
-.plan-toggle {
-	margin-left: auto; flex-shrink: 0;
-	display: flex; align-items: center; justify-content: center;
-	width: 32px; height: 32px; border-radius: 50%;
-	background-color: var(--su-bg-light);
-	color: var(--su-primary);
-	font-size: .78rem;
-	box-shadow: 0 0 0 1px var(--su-border) inset;
-	transition: box-shadow .2s ease, background-color .2s ease;
-}
-.plan-toggle i { transition: transform .3s ease; }
-.plan-row .accordion-button:not(.collapsed) .plan-toggle { background-color: #fff; box-shadow: 0 0 0 2px var(--su-primary) inset, 0 0 14px rgba(31,78,140,.35); }
-.plan-row .accordion-button:not(.collapsed) .plan-toggle i { transform: rotate(180deg); }
 .plan-row.is-popular .accordion-button { background: rgba(31,78,140,.04); }
 .plan-row.is-top .accordion-button { background: rgba(217,140,61,.06); }
 
@@ -777,25 +840,20 @@ a:hover { color: var(--su-primary-dark); }
 .plan-capital { font-family: 'Aleo', serif; font-weight: 700; font-size: 1.05rem; color: var(--su-primary); min-width: 130px; }
 .plan-capital em { display: block; font-style: normal; font-family: 'Lato', sans-serif; font-weight: 400; font-size: .68rem; color: var(--su-body); text-transform: uppercase; letter-spacing: .05em; }
 .plan-split-mini { display: flex; align-items: center; gap: .6rem; min-width: 220px; flex: 1 1 220px; }
-.split-bar-mini { position: relative; width: 80px; height: 7px; border-radius: 5px; background: var(--su-bg-light); overflow: hidden; flex-shrink: 0; box-shadow: inset 0 1px 2px rgba(20,30,50,.08); }
-.split-fill {
-	display: block; height: 100%; width: 0; border-radius: 5px;
-	background: linear-gradient(90deg, var(--su-primary), #4685d6);
-	box-shadow: 0 0 8px rgba(70,133,214,.6);
-	transition: width 1s cubic-bezier(.22,.9,.3,1);
-	position: relative; overflow: hidden;
+.mini-meter { position: relative; width: 56px; height: 34px; flex-shrink: 0; }
+.mini-meter-svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.mini-meter-track { fill: none; stroke: var(--su-bg-light); stroke-width: 9; stroke-linecap: round; }
+.mini-meter-fill {
+	fill: none; stroke: var(--su-primary); stroke-width: 9; stroke-linecap: round;
+	filter: drop-shadow(0 0 2px rgba(70,133,214,.7));
+	transition: stroke-dashoffset 1.3s cubic-bezier(.22,.9,.3,1);
 }
-.split-fill::after {
-	content: '';
-	position: absolute; inset: 0;
-	background: linear-gradient(115deg, transparent, rgba(255,255,255,.5), transparent);
-	transform: translateX(-100%);
-	animation: split-shine 2.6s ease-in-out infinite;
+.mini-meter-needle {
+	stroke: #1c1c1c; stroke-width: 2; stroke-linecap: round;
+	transform-origin: 50px 50px;
+	transition: transform 1.3s cubic-bezier(.22,.9,.3,1);
 }
-@keyframes split-shine {
-	0%, 30% { transform: translateX(-100%); }
-	60%, 100% { transform: translateX(220%); }
-}
+.mini-meter-pivot { fill: var(--su-secondary); }
 .split-text { font-size: .8rem; font-weight: 700; color: var(--su-body); white-space: nowrap; }
 .plan-row .accordion-body { padding: 0 1.5rem 1.5rem 4.75rem; color: var(--su-body); font-size: .9rem; }
 .plan-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: .5rem; }

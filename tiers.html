@@ -157,306 +157,441 @@
 		<!-- plans accordion begin -->
 		<section class="py-5 tiers-section pt-0">
 			<div class="container">
-				<div class="accordion plans-accordion" id="plansAccordion">
+			<div class="accordion plans-accordion" id="plansAccordion">
 
-					<div class="plan-row accordion-item">
-						<h2 class="accordion-header" id="planHead1">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan1" aria-expanded="false" aria-controls="plan1">
-								<span class="plan-num">01</span>
-								<span class="plan-name">Starter</span>
-								<span class="plan-capital">$2,500<em>starting capital</em></span>
-								<span class="plan-split-mini"><span class="split-bar-mini"><span class="split-fill" data-width="35"></span></span><span class="split-text">You 35% / ScaleUp 65%</span></span><span class="plan-toggle"><i class="fas fa-chevron-down"></i></span>
-							</button>
-						</h2>
-						<div id="plan1" class="accordion-collapse collapse" aria-labelledby="planHead1" data-bs-parent="#plansAccordion">
-							<div class="accordion-body">
-								<p>An entry point into disciplined, performance-based portfolio management.</p>
-								<div class="percent-gauge">
-									<div class="percent-gauge-track">
-										<div class="percent-gauge-highlight" data-width="35"></div>
-									</div>
-									<div class="percent-gauge-majors">
-										<div class="percent-gauge-major pg-start"><span>0%</span></div>
-										<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
-										<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
-										<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
-										<div class="percent-gauge-major pg-end"><span>100%</span></div>
+				<div class="plan-row accordion-item">
+					<h2 class="accordion-header" id="planHead1">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan1" aria-expanded="false" aria-controls="plan1">
+							<span class="plan-num">01</span>
+							<span class="plan-name">Starter</span>
+							<span class="plan-capital">$2,500<em>starting capital</em></span>
+							<span class="plan-split-mini">
+								<div class="profit-gauge" data-percent="65">
+									<div class="profit-gauge-row">
+										<div class="profit-gauge-flank flank-fill"><span class="flank-dot"></span><strong>65%</strong><span class="flank-label">ScaleUp Together</span></div>
+										<div class="profit-gauge-dial">
+											<svg viewBox="0 0 200 110" class="profit-gauge-svg">
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-track"></path>
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-fill"></path>
+												<polygon points="100,45 104,98 100,101 96,98" class="gauge-needle"></polygon>
+												<circle cx="100" cy="100" r="7" class="gauge-pivot"></circle>
+											</svg>
+										</div>
+										<div class="profit-gauge-flank flank-rest"><span class="flank-dot"></span><strong>35%</strong><span class="flank-label">Yours Profit</span></div>
 									</div>
 								</div>
-								<div class="split-labels mb-3"><span>You 35%</span><span>ScaleUp 65%</span></div>
-								<div class="plan-actions">
-									<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-									<a href="#demo-trial" class="demo-trial-link">Try Starter risk-free first ($2,500 demo) <i class="fas fa-arrow-right"></i></a>
+							</span>
+						</button>
+					</h2>
+					<div id="plan1" class="accordion-collapse collapse" aria-labelledby="planHead1" data-bs-parent="#plansAccordion">
+						<div class="accordion-body">
+							<p>An entry point into disciplined, performance-based portfolio management.</p>
+							<div class="percent-gauge">
+								<div class="percent-gauge-track">
+									<div class="percent-gauge-highlight" data-width="35"></div>
 								</div>
+								<div class="percent-gauge-majors">
+									<div class="percent-gauge-major pg-start"><span>0%</span></div>
+									<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
+									<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
+									<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
+									<div class="percent-gauge-major pg-end"><span>100%</span></div>
+								</div>
+							</div>
+							<div class="split-labels mb-3"><span>You 35%</span><span>ScaleUp 65%</span></div>
+							<div class="plan-actions">
+								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
+								<a href="#demo-trial" class="demo-trial-link">Try Starter risk-free first ($2,500 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
-
-					<div class="plan-row accordion-item">
-						<h2 class="accordion-header" id="planHead2">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan2" aria-expanded="false" aria-controls="plan2">
-								<span class="plan-num">02</span>
-								<span class="plan-name">Growth</span>
-								<span class="plan-capital">$5,000<em>starting capital</em></span>
-								<span class="plan-split-mini"><span class="split-bar-mini"><span class="split-fill" data-width="40"></span></span><span class="split-text">You 40% / ScaleUp 60%</span></span><span class="plan-toggle"><i class="fas fa-chevron-down"></i></span>
-							</button>
-						</h2>
-						<div id="plan2" class="accordion-collapse collapse" aria-labelledby="planHead2" data-bs-parent="#plansAccordion">
-							<div class="accordion-body">
-								<p>A larger allocation with a proportionally improved profit share.</p>
-								<div class="percent-gauge">
-									<div class="percent-gauge-track">
-										<div class="percent-gauge-highlight" data-width="40"></div>
-									</div>
-									<div class="percent-gauge-majors">
-										<div class="percent-gauge-major pg-start"><span>0%</span></div>
-										<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
-										<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
-										<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
-										<div class="percent-gauge-major pg-end"><span>100%</span></div>
-									</div>
-								</div>
-								<div class="split-labels mb-3"><span>You 40%</span><span>ScaleUp 60%</span></div>
-								<div class="plan-actions">
-									<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-									<a href="#demo-trial" class="demo-trial-link">Try Growth risk-free first ($5,000 demo) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="plan-row accordion-item">
-						<h2 class="accordion-header" id="planHead3">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan3" aria-expanded="false" aria-controls="plan3">
-								<span class="plan-num">03</span>
-								<span class="plan-name">Pro</span>
-								<span class="plan-capital">$7,500<em>starting capital</em></span>
-								<span class="plan-split-mini"><span class="split-bar-mini"><span class="split-fill" data-width="45"></span></span><span class="split-text">You 45% / ScaleUp 55%</span></span><span class="plan-toggle"><i class="fas fa-chevron-down"></i></span>
-							</button>
-						</h2>
-						<div id="plan3" class="accordion-collapse collapse" aria-labelledby="planHead3" data-bs-parent="#plansAccordion">
-							<div class="accordion-body">
-								<p>For investors ready to commit more meaningfully to active management.</p>
-								<div class="percent-gauge">
-									<div class="percent-gauge-track">
-										<div class="percent-gauge-highlight" data-width="45"></div>
-									</div>
-									<div class="percent-gauge-majors">
-										<div class="percent-gauge-major pg-start"><span>0%</span></div>
-										<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
-										<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
-										<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
-										<div class="percent-gauge-major pg-end"><span>100%</span></div>
-									</div>
-								</div>
-								<div class="split-labels mb-3"><span>You 45%</span><span>ScaleUp 55%</span></div>
-								<div class="plan-actions">
-									<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-									<a href="#demo-trial" class="demo-trial-link">Try Pro risk-free first ($7,500 demo) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="plan-row accordion-item is-popular">
-						<h2 class="accordion-header" id="planHead4">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan4" aria-expanded="false" aria-controls="plan4">
-								<span class="plan-num">04</span>
-								<span class="plan-name">Elite<span class="popular-badge">Most Popular</span></span>
-								<span class="plan-capital">$10,000<em>starting capital</em></span>
-								<span class="plan-split-mini"><span class="split-bar-mini"><span class="split-fill" data-width="50"></span></span><span class="split-text">You 50% / ScaleUp 50%</span></span><span class="plan-toggle"><i class="fas fa-chevron-down"></i></span>
-							</button>
-						</h2>
-						<div id="plan4" class="accordion-collapse collapse" aria-labelledby="planHead4" data-bs-parent="#plansAccordion">
-							<div class="accordion-body">
-								<p>An even, balanced partnership — our most requested plan.</p>
-								<div class="percent-gauge">
-									<div class="percent-gauge-track">
-										<div class="percent-gauge-highlight" data-width="50"></div>
-									</div>
-									<div class="percent-gauge-majors">
-										<div class="percent-gauge-major pg-start"><span>0%</span></div>
-										<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
-										<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
-										<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
-										<div class="percent-gauge-major pg-end"><span>100%</span></div>
-									</div>
-								</div>
-								<div class="split-labels mb-3"><span>You 50%</span><span>ScaleUp 50%</span></div>
-								<div class="plan-actions">
-									<a href="contact.html" class="btn btn-primary">Get Started</a>
-									<a href="#demo-trial" class="demo-trial-link">Try Elite risk-free first ($10,000 demo) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="plan-row accordion-item">
-						<h2 class="accordion-header" id="planHead5">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan5" aria-expanded="false" aria-controls="plan5">
-								<span class="plan-num">05</span>
-								<span class="plan-name">Prime</span>
-								<span class="plan-capital">$12,500<em>starting capital</em></span>
-								<span class="plan-split-mini"><span class="split-bar-mini"><span class="split-fill" data-width="55"></span></span><span class="split-text">You 55% / ScaleUp 45%</span></span><span class="plan-toggle"><i class="fas fa-chevron-down"></i></span>
-							</button>
-						</h2>
-						<div id="plan5" class="accordion-collapse collapse" aria-labelledby="planHead5" data-bs-parent="#plansAccordion">
-							<div class="accordion-body">
-								<p>A stronger profit share for investors scaling their commitment.</p>
-								<div class="percent-gauge">
-									<div class="percent-gauge-track">
-										<div class="percent-gauge-highlight" data-width="55"></div>
-									</div>
-									<div class="percent-gauge-majors">
-										<div class="percent-gauge-major pg-start"><span>0%</span></div>
-										<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
-										<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
-										<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
-										<div class="percent-gauge-major pg-end"><span>100%</span></div>
-									</div>
-								</div>
-								<div class="split-labels mb-3"><span>You 55%</span><span>ScaleUp 45%</span></div>
-								<div class="plan-actions">
-									<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-									<a href="#demo-trial" class="demo-trial-link">Try Prime risk-free first ($12,500 demo) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="plan-row accordion-item">
-						<h2 class="accordion-header" id="planHead6">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan6" aria-expanded="false" aria-controls="plan6">
-								<span class="plan-num">06</span>
-								<span class="plan-name">Institutional</span>
-								<span class="plan-capital">$15,000<em>starting capital</em></span>
-								<span class="plan-split-mini"><span class="split-bar-mini"><span class="split-fill" data-width="60"></span></span><span class="split-text">You 60% / ScaleUp 40%</span></span><span class="plan-toggle"><i class="fas fa-chevron-down"></i></span>
-							</button>
-						</h2>
-						<div id="plan6" class="accordion-collapse collapse" aria-labelledby="planHead6" data-bs-parent="#plansAccordion">
-							<div class="accordion-body">
-								<p>Structured for investors approaching institutional scale.</p>
-								<div class="percent-gauge">
-									<div class="percent-gauge-track">
-										<div class="percent-gauge-highlight" data-width="60"></div>
-									</div>
-									<div class="percent-gauge-majors">
-										<div class="percent-gauge-major pg-start"><span>0%</span></div>
-										<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
-										<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
-										<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
-										<div class="percent-gauge-major pg-end"><span>100%</span></div>
-									</div>
-								</div>
-								<div class="split-labels mb-3"><span>You 60%</span><span>ScaleUp 40%</span></div>
-								<div class="plan-actions">
-									<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-									<a href="#demo-trial" class="demo-trial-link">Try Institutional risk-free first ($15,000 demo) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="plan-row accordion-item">
-						<h2 class="accordion-header" id="planHead7">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan7" aria-expanded="false" aria-controls="plan7">
-								<span class="plan-num">07</span>
-								<span class="plan-name">Master</span>
-								<span class="plan-capital">$17,500<em>starting capital</em></span>
-								<span class="plan-split-mini"><span class="split-bar-mini"><span class="split-fill" data-width="65"></span></span><span class="split-text">You 65% / ScaleUp 35%</span></span><span class="plan-toggle"><i class="fas fa-chevron-down"></i></span>
-							</button>
-						</h2>
-						<div id="plan7" class="accordion-collapse collapse" aria-labelledby="planHead7" data-bs-parent="#plansAccordion">
-							<div class="accordion-body">
-								<p>A senior plan with a majority profit share retained by you.</p>
-								<div class="percent-gauge">
-									<div class="percent-gauge-track">
-										<div class="percent-gauge-highlight" data-width="65"></div>
-									</div>
-									<div class="percent-gauge-majors">
-										<div class="percent-gauge-major pg-start"><span>0%</span></div>
-										<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
-										<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
-										<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
-										<div class="percent-gauge-major pg-end"><span>100%</span></div>
-									</div>
-								</div>
-								<div class="split-labels mb-3"><span>You 65%</span><span>ScaleUp 35%</span></div>
-								<div class="plan-actions">
-									<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-									<a href="#demo-trial" class="demo-trial-link">Try Master risk-free first ($17,500 demo) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="plan-row accordion-item">
-						<h2 class="accordion-header" id="planHead8">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan8" aria-expanded="false" aria-controls="plan8">
-								<span class="plan-num">08</span>
-								<span class="plan-name">Supreme</span>
-								<span class="plan-capital">$20,000+<em>starting capital</em></span>
-								<span class="plan-split-mini"><span class="split-bar-mini"><span class="split-fill" data-width="70"></span></span><span class="split-text">You 70% / ScaleUp 30%</span></span><span class="plan-toggle"><i class="fas fa-chevron-down"></i></span>
-							</button>
-						</h2>
-						<div id="plan8" class="accordion-collapse collapse" aria-labelledby="planHead8" data-bs-parent="#plansAccordion">
-							<div class="accordion-body">
-								<p>For substantial capital commitments of $20,000 and above.</p>
-								<div class="percent-gauge">
-									<div class="percent-gauge-track">
-										<div class="percent-gauge-highlight" data-width="70"></div>
-									</div>
-									<div class="percent-gauge-majors">
-										<div class="percent-gauge-major pg-start"><span>0%</span></div>
-										<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
-										<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
-										<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
-										<div class="percent-gauge-major pg-end"><span>100%</span></div>
-									</div>
-								</div>
-								<div class="split-labels mb-3"><span>You 70%</span><span>ScaleUp 30%</span></div>
-								<div class="plan-actions">
-									<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-									<a href="#demo-trial" class="demo-trial-link">Try Supreme risk-free first ($20,000 demo) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="plan-row accordion-item is-top">
-						<h2 class="accordion-header" id="planHead9">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan9" aria-expanded="false" aria-controls="plan9">
-								<span class="plan-num">09</span>
-								<span class="plan-name">Sovereign<span class="popular-badge popular-badge--top">Highest Plan</span></span>
-								<span class="plan-capital">$25,000+<em>starting capital</em></span>
-								<span class="plan-split-mini"><span class="split-bar-mini"><span class="split-fill" data-width="75"></span></span><span class="split-text">You 75% / ScaleUp 25%</span></span><span class="plan-toggle"><i class="fas fa-chevron-down"></i></span>
-							</button>
-						</h2>
-						<div id="plan9" class="accordion-collapse collapse" aria-labelledby="planHead9" data-bs-parent="#plansAccordion">
-							<div class="accordion-body">
-								<p>Our most exclusive plan, reserved for our largest capital commitments.</p>
-								<div class="percent-gauge">
-									<div class="percent-gauge-track">
-										<div class="percent-gauge-highlight" data-width="75"></div>
-									</div>
-									<div class="percent-gauge-majors">
-										<div class="percent-gauge-major pg-start"><span>0%</span></div>
-										<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
-										<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
-										<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
-										<div class="percent-gauge-major pg-end"><span>100%</span></div>
-									</div>
-								</div>
-								<div class="split-labels mb-3"><span>You 75%</span><span>ScaleUp 25%</span></div>
-								<div class="plan-actions">
-									<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-									<a href="#demo-trial" class="demo-trial-link">Try Sovereign risk-free first ($25,000 demo) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
 				</div>
+
+				<div class="plan-row accordion-item">
+					<h2 class="accordion-header" id="planHead2">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan2" aria-expanded="false" aria-controls="plan2">
+							<span class="plan-num">02</span>
+							<span class="plan-name">Growth</span>
+							<span class="plan-capital">$5,000<em>starting capital</em></span>
+							<span class="plan-split-mini">
+								<div class="profit-gauge" data-percent="60">
+									<div class="profit-gauge-row">
+										<div class="profit-gauge-flank flank-fill"><span class="flank-dot"></span><strong>60%</strong><span class="flank-label">ScaleUp Together</span></div>
+										<div class="profit-gauge-dial">
+											<svg viewBox="0 0 200 110" class="profit-gauge-svg">
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-track"></path>
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-fill"></path>
+												<polygon points="100,45 104,98 100,101 96,98" class="gauge-needle"></polygon>
+												<circle cx="100" cy="100" r="7" class="gauge-pivot"></circle>
+											</svg>
+										</div>
+										<div class="profit-gauge-flank flank-rest"><span class="flank-dot"></span><strong>40%</strong><span class="flank-label">Yours Profit</span></div>
+									</div>
+								</div>
+							</span>
+						</button>
+					</h2>
+					<div id="plan2" class="accordion-collapse collapse" aria-labelledby="planHead2" data-bs-parent="#plansAccordion">
+						<div class="accordion-body">
+							<p>A larger allocation with a proportionally improved profit share.</p>
+							<div class="percent-gauge">
+								<div class="percent-gauge-track">
+									<div class="percent-gauge-highlight" data-width="40"></div>
+								</div>
+								<div class="percent-gauge-majors">
+									<div class="percent-gauge-major pg-start"><span>0%</span></div>
+									<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
+									<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
+									<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
+									<div class="percent-gauge-major pg-end"><span>100%</span></div>
+								</div>
+							</div>
+							<div class="split-labels mb-3"><span>You 40%</span><span>ScaleUp 60%</span></div>
+							<div class="plan-actions">
+								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
+								<a href="#demo-trial" class="demo-trial-link">Try Growth risk-free first ($5,000 demo) <i class="fas fa-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="plan-row accordion-item">
+					<h2 class="accordion-header" id="planHead3">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan3" aria-expanded="false" aria-controls="plan3">
+							<span class="plan-num">03</span>
+							<span class="plan-name">Pro</span>
+							<span class="plan-capital">$7,500<em>starting capital</em></span>
+							<span class="plan-split-mini">
+								<div class="profit-gauge" data-percent="55">
+									<div class="profit-gauge-row">
+										<div class="profit-gauge-flank flank-fill"><span class="flank-dot"></span><strong>55%</strong><span class="flank-label">ScaleUp Together</span></div>
+										<div class="profit-gauge-dial">
+											<svg viewBox="0 0 200 110" class="profit-gauge-svg">
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-track"></path>
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-fill"></path>
+												<polygon points="100,45 104,98 100,101 96,98" class="gauge-needle"></polygon>
+												<circle cx="100" cy="100" r="7" class="gauge-pivot"></circle>
+											</svg>
+										</div>
+										<div class="profit-gauge-flank flank-rest"><span class="flank-dot"></span><strong>45%</strong><span class="flank-label">Yours Profit</span></div>
+									</div>
+								</div>
+							</span>
+						</button>
+					</h2>
+					<div id="plan3" class="accordion-collapse collapse" aria-labelledby="planHead3" data-bs-parent="#plansAccordion">
+						<div class="accordion-body">
+							<p>For investors ready to commit more meaningfully to active management.</p>
+							<div class="percent-gauge">
+								<div class="percent-gauge-track">
+									<div class="percent-gauge-highlight" data-width="45"></div>
+								</div>
+								<div class="percent-gauge-majors">
+									<div class="percent-gauge-major pg-start"><span>0%</span></div>
+									<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
+									<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
+									<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
+									<div class="percent-gauge-major pg-end"><span>100%</span></div>
+								</div>
+							</div>
+							<div class="split-labels mb-3"><span>You 45%</span><span>ScaleUp 55%</span></div>
+							<div class="plan-actions">
+								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
+								<a href="#demo-trial" class="demo-trial-link">Try Pro risk-free first ($7,500 demo) <i class="fas fa-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="plan-row accordion-item is-popular">
+					<h2 class="accordion-header" id="planHead4">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan4" aria-expanded="false" aria-controls="plan4">
+							<span class="plan-num">04</span>
+							<span class="plan-name">Elite<span class="popular-badge">Most Popular</span></span>
+							<span class="plan-capital">$10,000<em>starting capital</em></span>
+							<span class="plan-split-mini">
+								<div class="profit-gauge" data-percent="50">
+									<div class="profit-gauge-row">
+										<div class="profit-gauge-flank flank-fill"><span class="flank-dot"></span><strong>50%</strong><span class="flank-label">ScaleUp Together</span></div>
+										<div class="profit-gauge-dial">
+											<svg viewBox="0 0 200 110" class="profit-gauge-svg">
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-track"></path>
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-fill"></path>
+												<polygon points="100,45 104,98 100,101 96,98" class="gauge-needle"></polygon>
+												<circle cx="100" cy="100" r="7" class="gauge-pivot"></circle>
+											</svg>
+										</div>
+										<div class="profit-gauge-flank flank-rest"><span class="flank-dot"></span><strong>50%</strong><span class="flank-label">Yours Profit</span></div>
+									</div>
+								</div>
+							</span>
+						</button>
+					</h2>
+					<div id="plan4" class="accordion-collapse collapse" aria-labelledby="planHead4" data-bs-parent="#plansAccordion">
+						<div class="accordion-body">
+							<p>An even, balanced partnership — our most requested plan.</p>
+							<div class="percent-gauge">
+								<div class="percent-gauge-track">
+									<div class="percent-gauge-highlight" data-width="50"></div>
+								</div>
+								<div class="percent-gauge-majors">
+									<div class="percent-gauge-major pg-start"><span>0%</span></div>
+									<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
+									<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
+									<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
+									<div class="percent-gauge-major pg-end"><span>100%</span></div>
+								</div>
+							</div>
+							<div class="split-labels mb-3"><span>You 50%</span><span>ScaleUp 50%</span></div>
+							<div class="plan-actions">
+								<a href="contact.html" class="btn btn-primary">Get Started</a>
+								<a href="#demo-trial" class="demo-trial-link">Try Elite risk-free first ($10,000 demo) <i class="fas fa-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="plan-row accordion-item">
+					<h2 class="accordion-header" id="planHead5">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan5" aria-expanded="false" aria-controls="plan5">
+							<span class="plan-num">05</span>
+							<span class="plan-name">Prime</span>
+							<span class="plan-capital">$12,500<em>starting capital</em></span>
+							<span class="plan-split-mini">
+								<div class="profit-gauge" data-percent="45">
+									<div class="profit-gauge-row">
+										<div class="profit-gauge-flank flank-fill"><span class="flank-dot"></span><strong>45%</strong><span class="flank-label">ScaleUp Together</span></div>
+										<div class="profit-gauge-dial">
+											<svg viewBox="0 0 200 110" class="profit-gauge-svg">
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-track"></path>
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-fill"></path>
+												<polygon points="100,45 104,98 100,101 96,98" class="gauge-needle"></polygon>
+												<circle cx="100" cy="100" r="7" class="gauge-pivot"></circle>
+											</svg>
+										</div>
+										<div class="profit-gauge-flank flank-rest"><span class="flank-dot"></span><strong>55%</strong><span class="flank-label">Yours Profit</span></div>
+									</div>
+								</div>
+							</span>
+						</button>
+					</h2>
+					<div id="plan5" class="accordion-collapse collapse" aria-labelledby="planHead5" data-bs-parent="#plansAccordion">
+						<div class="accordion-body">
+							<p>A stronger profit share for investors scaling their commitment.</p>
+							<div class="percent-gauge">
+								<div class="percent-gauge-track">
+									<div class="percent-gauge-highlight" data-width="55"></div>
+								</div>
+								<div class="percent-gauge-majors">
+									<div class="percent-gauge-major pg-start"><span>0%</span></div>
+									<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
+									<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
+									<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
+									<div class="percent-gauge-major pg-end"><span>100%</span></div>
+								</div>
+							</div>
+							<div class="split-labels mb-3"><span>You 55%</span><span>ScaleUp 45%</span></div>
+							<div class="plan-actions">
+								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
+								<a href="#demo-trial" class="demo-trial-link">Try Prime risk-free first ($12,500 demo) <i class="fas fa-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="plan-row accordion-item">
+					<h2 class="accordion-header" id="planHead6">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan6" aria-expanded="false" aria-controls="plan6">
+							<span class="plan-num">06</span>
+							<span class="plan-name">Institutional</span>
+							<span class="plan-capital">$15,000<em>starting capital</em></span>
+							<span class="plan-split-mini">
+								<div class="profit-gauge" data-percent="40">
+									<div class="profit-gauge-row">
+										<div class="profit-gauge-flank flank-fill"><span class="flank-dot"></span><strong>40%</strong><span class="flank-label">ScaleUp Together</span></div>
+										<div class="profit-gauge-dial">
+											<svg viewBox="0 0 200 110" class="profit-gauge-svg">
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-track"></path>
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-fill"></path>
+												<polygon points="100,45 104,98 100,101 96,98" class="gauge-needle"></polygon>
+												<circle cx="100" cy="100" r="7" class="gauge-pivot"></circle>
+											</svg>
+										</div>
+										<div class="profit-gauge-flank flank-rest"><span class="flank-dot"></span><strong>60%</strong><span class="flank-label">Yours Profit</span></div>
+									</div>
+								</div>
+							</span>
+						</button>
+					</h2>
+					<div id="plan6" class="accordion-collapse collapse" aria-labelledby="planHead6" data-bs-parent="#plansAccordion">
+						<div class="accordion-body">
+							<p>Structured for investors approaching institutional scale.</p>
+							<div class="percent-gauge">
+								<div class="percent-gauge-track">
+									<div class="percent-gauge-highlight" data-width="60"></div>
+								</div>
+								<div class="percent-gauge-majors">
+									<div class="percent-gauge-major pg-start"><span>0%</span></div>
+									<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
+									<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
+									<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
+									<div class="percent-gauge-major pg-end"><span>100%</span></div>
+								</div>
+							</div>
+							<div class="split-labels mb-3"><span>You 60%</span><span>ScaleUp 40%</span></div>
+							<div class="plan-actions">
+								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
+								<a href="#demo-trial" class="demo-trial-link">Try Institutional risk-free first ($15,000 demo) <i class="fas fa-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="plan-row accordion-item">
+					<h2 class="accordion-header" id="planHead7">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan7" aria-expanded="false" aria-controls="plan7">
+							<span class="plan-num">07</span>
+							<span class="plan-name">Master</span>
+							<span class="plan-capital">$17,500<em>starting capital</em></span>
+							<span class="plan-split-mini">
+								<div class="profit-gauge" data-percent="35">
+									<div class="profit-gauge-row">
+										<div class="profit-gauge-flank flank-fill"><span class="flank-dot"></span><strong>35%</strong><span class="flank-label">ScaleUp Together</span></div>
+										<div class="profit-gauge-dial">
+											<svg viewBox="0 0 200 110" class="profit-gauge-svg">
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-track"></path>
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-fill"></path>
+												<polygon points="100,45 104,98 100,101 96,98" class="gauge-needle"></polygon>
+												<circle cx="100" cy="100" r="7" class="gauge-pivot"></circle>
+											</svg>
+										</div>
+										<div class="profit-gauge-flank flank-rest"><span class="flank-dot"></span><strong>65%</strong><span class="flank-label">Yours Profit</span></div>
+									</div>
+								</div>
+							</span>
+						</button>
+					</h2>
+					<div id="plan7" class="accordion-collapse collapse" aria-labelledby="planHead7" data-bs-parent="#plansAccordion">
+						<div class="accordion-body">
+							<p>A senior plan with a majority profit share retained by you.</p>
+							<div class="percent-gauge">
+								<div class="percent-gauge-track">
+									<div class="percent-gauge-highlight" data-width="65"></div>
+								</div>
+								<div class="percent-gauge-majors">
+									<div class="percent-gauge-major pg-start"><span>0%</span></div>
+									<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
+									<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
+									<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
+									<div class="percent-gauge-major pg-end"><span>100%</span></div>
+								</div>
+							</div>
+							<div class="split-labels mb-3"><span>You 65%</span><span>ScaleUp 35%</span></div>
+							<div class="plan-actions">
+								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
+								<a href="#demo-trial" class="demo-trial-link">Try Master risk-free first ($17,500 demo) <i class="fas fa-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="plan-row accordion-item">
+					<h2 class="accordion-header" id="planHead8">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan8" aria-expanded="false" aria-controls="plan8">
+							<span class="plan-num">08</span>
+							<span class="plan-name">Supreme</span>
+							<span class="plan-capital">$20,000+<em>starting capital</em></span>
+							<span class="plan-split-mini">
+								<div class="profit-gauge" data-percent="30">
+									<div class="profit-gauge-row">
+										<div class="profit-gauge-flank flank-fill"><span class="flank-dot"></span><strong>30%</strong><span class="flank-label">ScaleUp Together</span></div>
+										<div class="profit-gauge-dial">
+											<svg viewBox="0 0 200 110" class="profit-gauge-svg">
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-track"></path>
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-fill"></path>
+												<polygon points="100,45 104,98 100,101 96,98" class="gauge-needle"></polygon>
+												<circle cx="100" cy="100" r="7" class="gauge-pivot"></circle>
+											</svg>
+										</div>
+										<div class="profit-gauge-flank flank-rest"><span class="flank-dot"></span><strong>70%</strong><span class="flank-label">Yours Profit</span></div>
+									</div>
+								</div>
+							</span>
+						</button>
+					</h2>
+					<div id="plan8" class="accordion-collapse collapse" aria-labelledby="planHead8" data-bs-parent="#plansAccordion">
+						<div class="accordion-body">
+							<p>For substantial capital commitments of $20,000 and above.</p>
+							<div class="percent-gauge">
+								<div class="percent-gauge-track">
+									<div class="percent-gauge-highlight" data-width="70"></div>
+								</div>
+								<div class="percent-gauge-majors">
+									<div class="percent-gauge-major pg-start"><span>0%</span></div>
+									<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
+									<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
+									<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
+									<div class="percent-gauge-major pg-end"><span>100%</span></div>
+								</div>
+							</div>
+							<div class="split-labels mb-3"><span>You 70%</span><span>ScaleUp 30%</span></div>
+							<div class="plan-actions">
+								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
+								<a href="#demo-trial" class="demo-trial-link">Try Supreme risk-free first ($20,000 demo) <i class="fas fa-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="plan-row accordion-item is-top">
+					<h2 class="accordion-header" id="planHead9">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plan9" aria-expanded="false" aria-controls="plan9">
+							<span class="plan-num">09</span>
+							<span class="plan-name">Sovereign<span class="popular-badge popular-badge--top">Highest Plan</span></span>
+							<span class="plan-capital">$25,000+<em>starting capital</em></span>
+							<span class="plan-split-mini">
+								<div class="profit-gauge" data-percent="25">
+									<div class="profit-gauge-row">
+										<div class="profit-gauge-flank flank-fill"><span class="flank-dot"></span><strong>25%</strong><span class="flank-label">ScaleUp Together</span></div>
+										<div class="profit-gauge-dial">
+											<svg viewBox="0 0 200 110" class="profit-gauge-svg">
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-track"></path>
+												<path d="M20,100 A80,80 0 0,1 180,100" class="gauge-fill"></path>
+												<polygon points="100,45 104,98 100,101 96,98" class="gauge-needle"></polygon>
+												<circle cx="100" cy="100" r="7" class="gauge-pivot"></circle>
+											</svg>
+										</div>
+										<div class="profit-gauge-flank flank-rest"><span class="flank-dot"></span><strong>75%</strong><span class="flank-label">Yours Profit</span></div>
+									</div>
+								</div>
+							</span>
+						</button>
+					</h2>
+					<div id="plan9" class="accordion-collapse collapse" aria-labelledby="planHead9" data-bs-parent="#plansAccordion">
+						<div class="accordion-body">
+							<p>Our most exclusive plan, reserved for our largest capital commitments.</p>
+							<div class="percent-gauge">
+								<div class="percent-gauge-track">
+									<div class="percent-gauge-highlight" data-width="75"></div>
+								</div>
+								<div class="percent-gauge-majors">
+									<div class="percent-gauge-major pg-start"><span>0%</span></div>
+									<div class="percent-gauge-major" style="left:25%"><span>25%</span></div>
+									<div class="percent-gauge-major" style="left:50%"><span>50%</span></div>
+									<div class="percent-gauge-major" style="left:75%"><span>75%</span></div>
+									<div class="percent-gauge-major pg-end"><span>100%</span></div>
+								</div>
+							</div>
+							<div class="split-labels mb-3"><span>You 75%</span><span>ScaleUp 25%</span></div>
+							<div class="plan-actions">
+								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
+								<a href="#demo-trial" class="demo-trial-link">Try Sovereign risk-free first ($25,000 demo) <i class="fas fa-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
 			</div>
 		</section>
 		<!-- plans accordion end -->

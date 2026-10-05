@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		counters.forEach(function (el) { observer.observe(el); });
 	}
 
-	// animated plan split bars
+	// animated plan split bars (linear ruler highlight + legacy split-fill bars)
 	var splitFills = document.querySelectorAll('.split-fill, .percent-gauge-highlight');
 	if (splitFills.length) {
 		var fillObserver = new IntersectionObserver(function (entries) {
@@ -81,8 +81,82 @@ document.addEventListener('DOMContentLoaded', function () {
 					fillObserver.unobserve(entry.target);
 				}
 			});
-		}, { threshold: 0.4 });
+		}, { threshold: 0.2 });
 		splitFills.forEach(function (el) { fillObserver.observe(el); });
+	}
+
+	// animated radial profit gauges
+	var profitGauges = document.querySelectorAll('.profit-gauge');
+	if (profitGauges.length) {
+		var ARC_LENGTH = Math.PI * 80; // semicircle, radius 80
+
+		var updateGauge = function (gauge) {
+			if (gauge.dataset.gaugeDone) return;
+			var pct = parseFloat(gauge.getAttribute('data-percent')) || 0;
+			var fill = gauge.querySelector('.gauge-fill');
+			var needle = gauge.querySelector('.gauge-needle');
+			if (fill) {
+				fill.style.strokeDasharray = ARC_LENGTH;
+				fill.style.strokeDashoffset = ARC_LENGTH - (pct / 100) * ARC_LENGTH;
+			}
+			if (needle) {
+				var angle = -90 + (pct / 100) * 180;
+				needle.style.transform = 'rotate(' + angle + 'deg)';
+			}
+			gauge.dataset.gaugeDone = '1';
+		};
+
+		var gaugeObserver = new IntersectionObserver(function (entries) {
+			entries.forEach(function (entry) {
+				if (entry.isIntersecting) {
+					updateGauge(entry.target);
+					gaugeObserver.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.1 });
+
+		profitGauges.forEach(function (el) {
+			var fill = el.querySelector('.gauge-fill');
+			var needle = el.querySelector('.gauge-needle');
+			if (fill) { fill.style.strokeDasharray = ARC_LENGTH; fill.style.strokeDashoffset = ARC_LENGTH; }
+			if (needle) { needle.style.transform = 'rotate(-90deg)'; }
+			gaugeObserver.observe(el);
+
+			// gauges inside a collapsed accordion panel have no layout box until
+			// expanded, so the observer never fires for them — update on open too
+			var collapseParent = el.closest('.accordion-collapse');
+			if (collapseParent) {
+				collapseParent.addEventListener('shown.bs.collapse', function () {
+					updateGauge(el);
+				});
+			}
+		});
+	}
+
+	// animated mini speedometer meters (compact plan-row indicator)
+	var miniMeters = document.querySelectorAll('.mini-meter');
+	if (miniMeters.length) {
+		var MINI_ARC = Math.PI * 42; // semicircle, radius 42
+		miniMeters.forEach(function (el) {
+			var fill = el.querySelector('.mini-meter-fill');
+			var needle = el.querySelector('.mini-meter-needle');
+			if (fill) { fill.style.strokeDasharray = MINI_ARC; fill.style.strokeDashoffset = MINI_ARC; }
+			if (needle) { needle.style.transform = 'rotate(-90deg)'; }
+		});
+		var miniMeterObserver = new IntersectionObserver(function (entries) {
+			entries.forEach(function (entry) {
+				if (entry.isIntersecting) {
+					var el = entry.target;
+					var pct = parseFloat(el.getAttribute('data-percent')) || 0;
+					var fill = el.querySelector('.mini-meter-fill');
+					var needle = el.querySelector('.mini-meter-needle');
+					if (fill) fill.style.strokeDashoffset = MINI_ARC - (pct / 100) * MINI_ARC;
+					if (needle) needle.style.transform = 'rotate(' + (-90 + (pct / 100) * 180) + 'deg)';
+					miniMeterObserver.unobserve(el);
+				}
+			});
+		}, { threshold: 0.1 });
+		miniMeters.forEach(function (el) { miniMeterObserver.observe(el); });
 	}
 
 	// floating contact widget
