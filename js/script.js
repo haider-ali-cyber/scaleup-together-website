@@ -92,18 +92,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		var updateGauge = function (gauge) {
 			if (gauge.dataset.gaugeDone) return;
+			gauge.dataset.gaugeDone = '1';
 			var pct = parseFloat(gauge.getAttribute('data-percent')) || 0;
 			var fill = gauge.querySelector('.gauge-fill');
 			var needle = gauge.querySelector('.gauge-needle');
-			if (fill) {
-				fill.style.strokeDasharray = ARC_LENGTH;
-				fill.style.strokeDashoffset = ARC_LENGTH - (pct / 100) * ARC_LENGTH;
-			}
-			if (needle) {
-				var angle = -90 + (pct / 100) * 180;
-				needle.style.transform = 'rotate(' + angle + 'deg)';
-			}
-			gauge.dataset.gaugeDone = '1';
+			var setGaugeTo = function (p, duration) {
+				if (fill) {
+					fill.style.transition = 'stroke-dashoffset ' + duration + 's cubic-bezier(.4,.1,.3,1)';
+					fill.style.strokeDasharray = ARC_LENGTH;
+					fill.style.strokeDashoffset = ARC_LENGTH - (p / 100) * ARC_LENGTH;
+				}
+				if (needle) {
+					needle.style.transition = 'transform ' + duration + 's cubic-bezier(.4,.1,.3,1)';
+					needle.style.transform = 'rotate(' + (-90 + (p / 100) * 180) + 'deg)';
+				}
+			};
+			setGaugeTo(100, 0.9);
+			setTimeout(function () { setGaugeTo(pct, 1.1); }, 950);
 		};
 
 		var gaugeObserver = new IntersectionObserver(function (entries) {
