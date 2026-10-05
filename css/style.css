@@ -211,7 +211,7 @@ a:hover { color: var(--su-primary-dark); }
 	display: inline-flex; align-items: center; justify-content: center;
 	width: 28px; height: 28px; color: #fff; font-size: .75rem; margin-right: .4rem;
 }
-.optional-link .icon-wrap i { transform: translate(1px, 0.5px); }
+.optional-link .icon-wrap i { transform: translate(-1px, 0.5px); }
 /* utility bar sits over the photo while header is transparent — needs light text for contrast */
 .hero-utility-bar .in-icon-link { color: #1c1c1c; }
 .site-header.is-scrolled .hero-utility-bar .in-icon-link { color: #1c1c1c; text-shadow: none; }
@@ -722,7 +722,7 @@ a:hover { color: var(--su-primary-dark); }
 .profit-gauge-value {
 	font-family: 'Aleo', serif; font-weight: 700; font-size: 1.7rem; color: #fff;
 	text-shadow: 0 0 14px rgba(90,180,255,.8);
-	margin-top: -1.3rem; position: relative; z-index: 1;
+	margin-top: .35rem; position: relative; z-index: 1;
 }
 .profit-gauge-flank {
 	flex: 0 1 76px;
