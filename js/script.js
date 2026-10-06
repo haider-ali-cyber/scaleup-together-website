@@ -70,19 +70,32 @@ document.addEventListener('DOMContentLoaded', function () {
 		counters.forEach(function (el) { observer.observe(el); });
 	}
 
-	// animated plan split bars (linear ruler highlight + legacy split-fill bars)
-	var splitFills = document.querySelectorAll('.split-fill, .percent-gauge-highlight');
-	if (splitFills.length) {
-		var fillObserver = new IntersectionObserver(function (entries) {
-			entries.forEach(function (entry) {
-				if (entry.isIntersecting) {
-					var target = entry.target.getAttribute('data-width') || 0;
-					entry.target.style.width = target + '%';
-					fillObserver.unobserve(entry.target);
-				}
-			});
-		}, { threshold: 0.2 });
-		splitFills.forEach(function (el) { fillObserver.observe(el); });
+	// animated plan split ruler — replays from 0 every time its accordion row opens
+	var percentHighlights = document.querySelectorAll('.percent-gauge-highlight');
+	if (percentHighlights.length) {
+		percentHighlights.forEach(function (el) {
+			var target = el.getAttribute('data-width') || 0;
+			var animate = function () {
+				el.style.transition = 'none';
+				el.style.width = '0%';
+				void el.offsetWidth; // force reflow so the reset is committed before re-animating
+				el.style.transition = '';
+				requestAnimationFrame(function () {
+					el.style.width = target + '%';
+				});
+			};
+			var collapseParent = el.closest('.accordion-collapse');
+			if (collapseParent) {
+				collapseParent.addEventListener('shown.bs.collapse', animate);
+			} else {
+				var fillObserver = new IntersectionObserver(function (entries) {
+					entries.forEach(function (entry) {
+						if (entry.isIntersecting) { animate(); fillObserver.unobserve(entry.target); }
+					});
+				}, { threshold: 0.2 });
+				fillObserver.observe(el);
+			}
+		});
 	}
 
 	// animated radial profit gauges
