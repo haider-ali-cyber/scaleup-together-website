@@ -705,7 +705,7 @@ a:hover { color: var(--su-primary-dark); }
 	position: relative;
 	overflow: hidden;
 	border-radius: 20px;
-	padding: 1.75rem 1.25rem 1.5rem;
+	padding: 1.75rem 1rem 1.5rem;
 	height: 100%;
 	display: flex; align-items: center; justify-content: center;
 	background:
@@ -723,7 +723,7 @@ a:hover { color: var(--su-primary-dark); }
 }
 .profit-gauge { position: relative; z-index: 1; width: 100%; max-width: 320px; margin: 0 auto; }
 .profit-gauge-row { display: flex; align-items: center; justify-content: center; gap: 1rem; }
-.profit-gauge-dial { position: relative; flex: 0 0 auto; width: 100%; max-width: 172px; text-align: center; }
+.profit-gauge-dial { position: relative; flex: 0 0 auto; width: 100%; max-width: 160px; text-align: center; }
 .profit-gauge-svg { width: 100%; height: auto; display: block; overflow: visible; }
 .gauge-track { fill: none; stroke: rgba(255,255,255,.14); stroke-width: 12; stroke-linecap: round; }
 .gauge-fill {
@@ -756,6 +756,7 @@ a:hover { color: var(--su-primary-dark); }
 	display: flex; flex-direction: column; align-items: center; gap: .25rem;
 	text-align: center;
 }
+.profit-gauge-flank.flank-fill { margin-right: .5rem; }
 .profit-gauge-flank .flank-label {
 	display: block; width: 100%;
 	font-size: .66rem; font-weight: 700; color: rgba(255,255,255,.8);
