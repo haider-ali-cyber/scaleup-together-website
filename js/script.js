@@ -177,6 +177,25 @@ document.addEventListener('DOMContentLoaded', function () {
 		miniMeters.forEach(function (el) { miniMeterObserver.observe(el); });
 	}
 
+	// demo fee popup — shows the plan-specific one-time fee before jumping to the demo-trial section
+	var demoFeeModalEl = document.getElementById('demoFeeModal');
+	var demoLinks = document.querySelectorAll('.demo-trial-link[data-fee]');
+	if (demoFeeModalEl && demoLinks.length && window.bootstrap) {
+		var demoFeeModal = new bootstrap.Modal(demoFeeModalEl);
+		var planEl = demoFeeModalEl.querySelector('.demo-fee-plan');
+		var capitalEl = demoFeeModalEl.querySelector('.demo-fee-capital');
+		var amountEl = demoFeeModalEl.querySelector('.demo-fee-amount');
+		demoLinks.forEach(function (link) {
+			link.addEventListener('click', function (e) {
+				e.preventDefault();
+				planEl.textContent = link.getAttribute('data-plan');
+				capitalEl.textContent = link.getAttribute('data-capital');
+				amountEl.textContent = link.getAttribute('data-fee');
+				demoFeeModal.show();
+			});
+		});
+	}
+
 	// floating contact widget
 	var floatingContact = document.querySelector('.floating-contact');
 	if (floatingContact) {

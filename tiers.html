@@ -133,7 +133,7 @@
 								</div>
 								<div class="demo-trial-step">
 									<span class="demo-trial-num">2</span>
-									<div><strong>Share the login &amp; pay a $100 service fee</strong><span>Contact us on WhatsApp to arrange</span></div>
+									<div><strong>Share the login &amp; pay a one-time, refundable service fee</strong><span>$10&ndash;$100 depending on plan &mdash; contact us on WhatsApp to arrange</span></div>
 								</div>
 								<div class="demo-trial-step">
 									<span class="demo-trial-num">3</span>
@@ -146,11 +146,36 @@
 						<a href="https://one.exnessonelink.com/a/tokmuokm" target="_blank" rel="noopener" class="btn btn-primary">Open a Free Demo Account</a>
 						<a href="https://wa.me/000000000000" target="_blank" rel="noopener" class="btn btn-outline-primary">Contact Us on WhatsApp</a>
 					</div>
-					<p class="demo-trial-note">A flat $100 service fee applies, arranged directly via WhatsApp. Demo account performance is not a guarantee of future results on a live account.</p>
+					<p class="demo-trial-note">A one-time service fee ($10&ndash;$100, scaled to your plan's capital level) applies and is fully refundable, arranged directly via WhatsApp. Demo account performance is not a guarantee of future results on a live account.</p>
 				</div>
 			</div>
 		</section>
 		<!-- demo trial end -->
+
+		<!-- demo fee popup begin -->
+		<div class="modal fade" id="demoFeeModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content demo-fee-modal">
+					<button type="button" class="btn-close demo-fee-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					<div class="modal-body">
+						<div class="demo-fee-modal-icon"><i class="fas fa-shield-halved"></i></div>
+						<h5 class="text-center mb-1">Try <span class="demo-fee-plan">Starter</span> Risk-Free</h5>
+						<p class="text-center text-muted mb-3">$<span class="demo-fee-capital">2,500</span> demo account, traded live for 7 days</p>
+						<div class="demo-fee-amount-box">
+							<span class="small text-uppercase text-muted">One-Time Service Fee</span>
+							<strong>$<span class="demo-fee-amount">10</span></strong>
+						</div>
+						<p class="demo-fee-refund-note"><i class="fas fa-rotate-left"></i> This one-time fee is fully refundable.</p>
+						<p class="small text-muted text-center mb-0">Arranged directly via WhatsApp once you share your demo login with us.</p>
+						<div class="d-grid gap-2 mt-3">
+							<a href="#demo-trial" data-bs-dismiss="modal" class="btn btn-primary">Continue</a>
+							<button type="button" class="btn btn-link text-decoration-none" data-bs-dismiss="modal">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- demo fee popup end -->
 
 		<!-- plans accordion begin -->
 		<section class="py-5 tiers-section pt-0">
@@ -201,7 +226,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="#demo-trial" class="demo-trial-link">Try Starter risk-free first ($2,500 demo) <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Starter" data-capital="2,500" data-fee="10">Try Starter risk-free first ($2,500 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -251,7 +276,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="#demo-trial" class="demo-trial-link">Try Growth risk-free first ($5,000 demo) <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Growth" data-capital="5,000" data-fee="20">Try Growth risk-free first ($5,000 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -301,7 +326,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="#demo-trial" class="demo-trial-link">Try Pro risk-free first ($7,500 demo) <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Pro" data-capital="7,500" data-fee="30">Try Pro risk-free first ($7,500 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -351,7 +376,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-primary">Get Started</a>
-								<a href="#demo-trial" class="demo-trial-link">Try Elite risk-free first ($10,000 demo) <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Elite" data-capital="10,000" data-fee="40">Try Elite risk-free first ($10,000 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -401,7 +426,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="#demo-trial" class="demo-trial-link">Try Prime risk-free first ($12,500 demo) <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Prime" data-capital="12,500" data-fee="50">Try Prime risk-free first ($12,500 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -451,7 +476,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="#demo-trial" class="demo-trial-link">Try Institutional risk-free first ($15,000 demo) <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Institutional" data-capital="15,000" data-fee="60">Try Institutional risk-free first ($15,000 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -501,7 +526,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="#demo-trial" class="demo-trial-link">Try Master risk-free first ($17,500 demo) <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Master" data-capital="17,500" data-fee="70">Try Master risk-free first ($17,500 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -551,7 +576,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="#demo-trial" class="demo-trial-link">Try Supreme risk-free first ($20,000 demo) <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Supreme" data-capital="20,000" data-fee="80">Try Supreme risk-free first ($20,000 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -601,7 +626,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="#demo-trial" class="demo-trial-link">Try Sovereign risk-free first ($25,000 demo) <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Sovereign" data-capital="25,000" data-fee="100">Try Sovereign risk-free first ($25,000 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
