@@ -722,8 +722,8 @@ a:hover { color: var(--su-primary-dark); }
 	pointer-events: none;
 }
 .profit-gauge { position: relative; z-index: 1; width: 100%; max-width: 320px; margin: 0 auto; }
-.profit-gauge-row { display: flex; align-items: center; justify-content: center; gap: .5rem; }
-.profit-gauge-dial { position: relative; flex: 0 0 auto; width: 100%; max-width: 190px; text-align: center; }
+.profit-gauge-row { display: flex; align-items: center; justify-content: center; gap: 1rem; }
+.profit-gauge-dial { position: relative; flex: 0 0 auto; width: 100%; max-width: 172px; text-align: center; }
 .profit-gauge-svg { width: 100%; height: auto; display: block; overflow: visible; }
 .gauge-track { fill: none; stroke: rgba(255,255,255,.14); stroke-width: 12; stroke-linecap: round; }
 .gauge-fill {
