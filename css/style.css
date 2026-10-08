@@ -22,13 +22,16 @@
 	box-sizing: border-box;
 }
 
-html { overflow-x: hidden; }
 body {
 	font-family: 'Lato', sans-serif;
 	color: var(--su-body);
 	font-weight: 400;
-	overflow-x: hidden;
 }
+/* overflow-x is clipped on these content containers rather than html/body —
+   overflow set to anything but visible on html/body breaks position:sticky
+   for the header (a direct body sibling), causing it to stop sticking/hiding
+   correctly on inner pages */
+main, footer { overflow-x: hidden; }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Aleo', serif;
