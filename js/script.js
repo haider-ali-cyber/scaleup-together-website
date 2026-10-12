@@ -12,7 +12,31 @@ document.addEventListener('DOMContentLoaded', function () {
 	var header = document.querySelector('.site-header');
 	if (header) {
 		var headerHideTimer = null;
+		var navbarCollapseEl = header.querySelector('.navbar-collapse');
+		var menuIsOpen = false;
+
+		// the floating-pill scroll state looks broken while the mobile menu
+		// dropdown is open, so suspend it for as long as the menu is open
+		if (navbarCollapseEl) {
+			navbarCollapseEl.addEventListener('show.bs.collapse', function () {
+				menuIsOpen = true;
+				header.classList.remove('is-scrolled', 'header-hidden');
+			});
+			navbarCollapseEl.addEventListener('hidden.bs.collapse', function () {
+				menuIsOpen = false;
+				header.classList.toggle('is-scrolled', window.scrollY > 10);
+			});
+		}
+
 		window.addEventListener('scroll', function () {
+			if (menuIsOpen) {
+				// close the open mobile menu on scroll instead of letting it
+				// sit open while the header tries to collapse into a pill
+				if (navbarCollapseEl && window.bootstrap) {
+					bootstrap.Collapse.getOrCreateInstance(navbarCollapseEl).hide();
+				}
+				return;
+			}
 			var isScrolled = window.scrollY > 10;
 			header.classList.toggle('is-scrolled', isScrolled);
 			header.classList.remove('header-hidden');
