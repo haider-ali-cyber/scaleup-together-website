@@ -258,6 +258,25 @@ a:hover { color: var(--su-primary-dark); }
 .site-header.is-scrolled .navbar-nav { background: transparent; box-shadow: none; }
 .navbar-nav .nav-link { color: #1c1c1c; font-weight: 700; padding: .85rem 1.1rem; }
 .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: var(--su-primary); }
+
+/* Google Translate widget — keep it after the nav links on every breakpoint
+   and strip Google's default chrome (banner, icons, "Powered by") so it
+   reads as a plain language dropdown instead of a Google-branded gadget */
+.navbar .lang-switch { order: 3; margin-left: .5rem; display: flex; align-items: center; min-height: 38px; }
+.goog-te-banner-frame.skiptranslate { display: none !important; }
+body { top: 0 !important; }
+.goog-te-gadget { font-family: inherit !important; font-size: 0 !important; color: transparent !important; }
+.goog-te-gadget img { display: none !important; }
+.goog-te-gadget .goog-te-combo {
+	font-size: 14px !important;
+	font-weight: 700;
+	color: #1c1c1c;
+	border: 1px solid var(--su-border);
+	border-radius: 8px;
+	padding: .4rem .5rem;
+	background: #fff;
+}
+.site-header.is-scrolled .goog-te-gadget .goog-te-combo { background: #fff; }
 .dropdown-menu { border: 1px solid var(--su-border); box-shadow: 0 10px 24px rgba(0,0,0,.08); }
 .dropdown-item:hover { background: var(--su-bg-light); color: var(--su-primary); }
 

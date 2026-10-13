@@ -38,6 +38,7 @@
 					<button class="navbar-toggler d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
+					<div id="google_translate_element" class="lang-switch"></div>
 					<div class="collapse navbar-collapse" id="mainNav">
 					<ul class="navbar-nav">
 						<li class="nav-item">
@@ -801,6 +802,17 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="js/script.js"></script>
+	<script type="text/javascript">
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement({
+				pageLanguage: "en",
+				includedLanguages: "ar,vi,ms,id,zh-CN,hi,ur,es",
+				layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+				autoDisplay: false
+			}, "google_translate_element");
+		}
+	</script>
+	<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 
 </html>
