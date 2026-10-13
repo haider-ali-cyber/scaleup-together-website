@@ -259,24 +259,32 @@ a:hover { color: var(--su-primary-dark); }
 .navbar-nav .nav-link { color: #1c1c1c; font-weight: 700; padding: .85rem 1.1rem; }
 .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: var(--su-primary); }
 
-/* Google Translate widget — keep it after the nav links on every breakpoint
-   and strip Google's default chrome (banner, icons, "Powered by") so it
-   reads as a plain language dropdown instead of a Google-branded gadget */
-.navbar .lang-switch { order: 3; margin-left: .5rem; display: flex; align-items: center; min-height: 38px; }
+/* Google Translate widget — lives inside the nav pill as just another nav
+   item, with Google's default chrome (banner, icons, "Powered by", native
+   select arrow) stripped so it reads as a plain language switcher that
+   matches the rest of the nav instead of a Google-branded gadget */
+.lang-switch-item { display: flex; align-items: center; }
+.lang-switch { display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 1.1rem; cursor: pointer; }
+.lang-switch-icon { color: var(--su-primary); font-size: .85rem; }
+.lang-switch-caret { color: #1c1c1c; font-size: .6rem; opacity: .6; pointer-events: none; }
 .goog-te-banner-frame.skiptranslate { display: none !important; }
 body { top: 0 !important; }
-.goog-te-gadget { font-family: inherit !important; font-size: 0 !important; color: transparent !important; }
+.goog-te-gadget { font-family: inherit !important; font-size: 0 !important; line-height: 1; }
 .goog-te-gadget img { display: none !important; }
 .goog-te-gadget .goog-te-combo {
+	-webkit-appearance: none;
+	appearance: none;
+	border: none !important;
+	outline: none;
+	background: transparent !important;
+	font-family: inherit !important;
 	font-size: 14px !important;
 	font-weight: 700;
-	color: #1c1c1c;
-	border: 1px solid var(--su-border);
-	border-radius: 8px;
-	padding: .4rem .5rem;
-	background: #fff;
+	color: #1c1c1c !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	cursor: pointer;
 }
-.site-header.is-scrolled .goog-te-gadget .goog-te-combo { background: #fff; }
 .dropdown-menu { border: 1px solid var(--su-border); box-shadow: 0 10px 24px rgba(0,0,0,.08); }
 .dropdown-item:hover { background: var(--su-bg-light); color: var(--su-primary); }
 
