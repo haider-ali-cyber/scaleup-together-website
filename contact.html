@@ -127,7 +127,11 @@
 						</div>
 					</div>
 					<div class="col-lg-7">
-						<form class="contact-form" action="#" method="post">
+						<form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+							<input type="hidden" name="access_key" value="682bb84f-21d2-44da-bc23-03728518dcdd">
+							<input type="hidden" name="subject" value="New consultation request — ScaleUp Together">
+							<input type="hidden" name="from_name" value="ScaleUp Together Website">
+							<input type="checkbox" name="botcheck" class="d-none" style="display:none" tabindex="-1" autocomplete="off">
 							<div class="row g-3">
 								<div class="col-md-6">
 									<label class="form-label" for="fullName">Full Name</label>
@@ -145,6 +149,7 @@
 									<label class="form-label" for="tier">Plan of Interest</label>
 									<select class="form-select" id="tier" name="tier">
 										<option selected>Not sure yet</option>
+										<option>Basic — $1,000</option>
 										<option>Starter — $2,500</option>
 										<option>Growth — $5,000</option>
 										<option>Pro — $7,500</option>
@@ -161,8 +166,8 @@
 									<textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us a little about your investment objectives..."></textarea>
 								</div>
 								<div class="col-12">
-									<button type="submit" class="btn btn-primary btn-lg w-100">Request a Consultation</button>
-									<p class="small text-muted text-center mt-3 mb-0"><em>[Placeholder — form submission pending backend/CRM integration. For now, please reach us via WhatsApp or email above.]</em></p>
+									<button type="submit" class="btn btn-primary btn-lg w-100" id="contactSubmitBtn">Request a Consultation</button>
+									<div id="contactFormStatus" class="small text-center mt-3" role="status" aria-live="polite"></div>
 								</div>
 							</div>
 						</form>
