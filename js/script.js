@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		var headerHideTimer = null;
 		var navbarCollapseEl = header.querySelector('.navbar-collapse');
 		var menuIsOpen = false;
+		var scrollYAtMenuOpen = 0;
 
 		// the floating-pill scroll state looks broken while the mobile menu
 		// dropdown is open, so reset it to a plain full-width bar for as long
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (navbarCollapseEl) {
 			navbarCollapseEl.addEventListener('show.bs.collapse', function () {
 				menuIsOpen = true;
+				scrollYAtMenuOpen = window.scrollY;
 				// a pending idle-hide timer from before the menu opened must not
 				// fire while (or after) the menu is open — it would slide the
 				// header away with the dropdown still showing
@@ -39,6 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		window.addEventListener('scroll', function () {
 			if (menuIsOpen) {
+				// opening a dropdown submenu inside the mobile nav can itself
+				// fire a stray scroll event with little/no real position change
+				// (layout reflow, focus-into-view, etc) — only treat it as the
+				// user scrolling the page away if position actually moved by a
+				// meaningful amount, otherwise leave the menu open
+				if (Math.abs(window.scrollY - scrollYAtMenuOpen) < 15) return;
 				// close the open mobile menu on scroll instead of letting it
 				// sit open while the header tries to collapse into a pill
 				if (navbarCollapseEl && window.bootstrap) {
