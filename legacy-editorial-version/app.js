@@ -122,6 +122,6 @@ function handleContact(e) {
   const name = document.getElementById('fname').value;
   const email = document.getElementById('femail').value;
   const tier = document.getElementById('ftier').value;
-  alert('Thank you, ' + name + '! Your consultation request for the ' + tier + ' tier has been received. Itrut Malik will reach out to ' + email + ' shortly.');
+  alert('Thank you, ' + name + '! Your consultation request for the ' + tier + ' tier has been received. M Itrut will reach out to ' + email + ' shortly.');
   e.target.reset();
 }

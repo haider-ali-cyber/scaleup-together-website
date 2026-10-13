@@ -39,6 +39,22 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
 		}
 
+		// a desktop Services/Company/Resources dropdown stays positioned where
+		// Popper last placed it even after the header slides off-screen, so it
+		// has to be closed explicitly when the header auto-hides
+		var closeOpenDropdowns = function () {
+			var openToggles = header.querySelectorAll('.dropdown-toggle[aria-expanded="true"]');
+			openToggles.forEach(function (toggle) {
+				if (window.bootstrap) {
+					bootstrap.Dropdown.getOrCreateInstance(toggle).hide();
+				} else {
+					toggle.setAttribute('aria-expanded', 'false');
+					var menu = toggle.nextElementSibling;
+					if (menu) menu.classList.remove('show');
+				}
+			});
+		};
+
 		window.addEventListener('scroll', function () {
 			if (menuIsOpen) {
 				// opening a dropdown submenu inside the mobile nav can itself
@@ -60,7 +76,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			clearTimeout(headerHideTimer);
 			if (isScrolled) {
 				headerHideTimer = setTimeout(function () {
-					if (!menuIsOpen) header.classList.add('header-hidden');
+					if (!menuIsOpen) {
+						closeOpenDropdowns();
+						header.classList.add('header-hidden');
+					}
 				}, 1200);
 			}
 		});
@@ -218,39 +237,25 @@ document.addEventListener('DOMContentLoaded', function () {
 		miniMeters.forEach(function (el) { miniMeterObserver.observe(el); });
 	}
 
-	// contact form submission via Web3Forms
+	// contact form submission via Web3Forms — a plain native POST (Web3Forms
+	// redirects back to the "redirect" hidden field's URL once it processes
+	// the submission), not a JS fetch(), since fetch()/AJAX submissions were
+	// being rejected by Web3Forms on the free plan ("Pro plan is required")
 	var contactForm = document.getElementById('contactForm');
 	if (contactForm) {
-		var contactStatus = document.getElementById('contactFormStatus');
 		var contactSubmitBtn = document.getElementById('contactSubmitBtn');
-		contactForm.addEventListener('submit', function (e) {
-			e.preventDefault();
+		contactForm.addEventListener('submit', function () {
 			contactSubmitBtn.disabled = true;
 			contactSubmitBtn.textContent = 'Sending...';
-			contactStatus.textContent = '';
-			contactStatus.className = 'small text-center mt-3';
-
-			fetch(contactForm.action, {
-				method: 'POST',
-				headers: { Accept: 'application/json' },
-				body: new FormData(contactForm)
-			})
-				.then(function (res) { return res.json(); })
-				.then(function (data) {
-					if (!data.success) throw new Error(data.message || 'Submission failed');
-					contactStatus.textContent = "Thank you — we've received your request and will be in touch shortly.";
-					contactStatus.classList.add('text-success', 'fw-bold');
-					contactForm.reset();
-				})
-				.catch(function () {
-					contactStatus.textContent = 'Something went wrong — please try again, or reach us directly via WhatsApp or email.';
-					contactStatus.classList.add('text-danger', 'fw-bold');
-				})
-				.finally(function () {
-					contactSubmitBtn.disabled = false;
-					contactSubmitBtn.textContent = 'Request a Consultation';
-				});
 		});
+	}
+
+	// show the success message after Web3Forms redirects back with ?sent=true
+	var contactStatus = document.getElementById('contactFormStatus');
+	if (contactStatus && window.location.search.indexOf('sent=true') !== -1) {
+		contactStatus.textContent = "Thank you — we've received your request and will be in touch shortly.";
+		contactStatus.classList.add('text-success', 'fw-bold');
+		window.history.replaceState(null, '', window.location.pathname);
 	}
 
 	// floating contact widget

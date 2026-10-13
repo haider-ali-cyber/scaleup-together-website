@@ -3,7 +3,7 @@
 ## 1. Project Overview
 
 Brand: **ScaleUp Together**  
-Founder: **Itrut Malik**  
+Founder: **M Itrut**  
 Market: **Pakistan initially**  
 Positioning: Premium Forex, portfolio and managed trading service for serious investors.
 
@@ -127,7 +127,7 @@ Relevant SBP notice:
 https://www.sbp.org.pk/press/2022/Pr-18-May-2022.pdf
 
 Therefore, before launch/ads:
-1. Verify Itrut's exact legal status.
+1. Verify M Itrut's exact legal status.
 2. Verify company registration.
 3. Verify applicable SECP license/registration.
 4. Verify broker and broker jurisdiction.
@@ -301,7 +301,7 @@ DO NOT copy competitors directly. Use them only as inspiration.
 Recommended pages:
 
 - Home
-- About Itrut Malik
+- About M Itrut
 - Services
 - Our Approach
 - How It Works
@@ -665,13 +665,13 @@ Visual:
 # 19. Founder Section
 
 Founder:
-**Itrut Malik**
+**M Itrut**
 
 Title:
 Founder & Market Strategist
 
 Copy:
-> With 15+ years of experience in financial markets, Itrut Malik leads ScaleUp Together with a focus on disciplined market participation, structured risk management and long-term client relationships.
+> With 15+ years of experience in financial markets, M Itrut leads ScaleUp Together with a focus on disciplined market participation, structured risk management and long-term client relationships.
 
 Do NOT fabricate:
 - Awards
@@ -809,7 +809,7 @@ Recommended:
 - Professional commentary
 
 ### 3. Founder Authority
-- Itrut's experience
+- M Itrut's experience
 - Philosophy
 - Decision-making
 
