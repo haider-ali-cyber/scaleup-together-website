@@ -201,22 +201,38 @@ document.addEventListener('DOMContentLoaded', function () {
 		miniMeters.forEach(function (el) { miniMeterObserver.observe(el); });
 	}
 
-	// demo fee popup — shows the plan-specific one-time fee before jumping to the demo-trial section
-	var demoFeeModalEl = document.getElementById('demoFeeModal');
-	var demoLinks = document.querySelectorAll('.demo-trial-link[data-fee]');
-	if (demoFeeModalEl && demoLinks.length && window.bootstrap) {
-		var demoFeeModal = new bootstrap.Modal(demoFeeModalEl);
-		var planEl = demoFeeModalEl.querySelector('.demo-fee-plan');
-		var capitalEl = demoFeeModalEl.querySelector('.demo-fee-capital');
-		var amountEl = demoFeeModalEl.querySelector('.demo-fee-amount');
-		demoLinks.forEach(function (link) {
-			link.addEventListener('click', function (e) {
-				e.preventDefault();
-				planEl.textContent = link.getAttribute('data-plan');
-				capitalEl.textContent = link.getAttribute('data-capital');
-				amountEl.textContent = link.getAttribute('data-fee');
-				demoFeeModal.show();
-			});
+	// contact form submission via Web3Forms
+	var contactForm = document.getElementById('contactForm');
+	if (contactForm) {
+		var contactStatus = document.getElementById('contactFormStatus');
+		var contactSubmitBtn = document.getElementById('contactSubmitBtn');
+		contactForm.addEventListener('submit', function (e) {
+			e.preventDefault();
+			contactSubmitBtn.disabled = true;
+			contactSubmitBtn.textContent = 'Sending...';
+			contactStatus.textContent = '';
+			contactStatus.className = 'small text-center mt-3';
+
+			fetch(contactForm.action, {
+				method: 'POST',
+				headers: { Accept: 'application/json' },
+				body: new FormData(contactForm)
+			})
+				.then(function (res) { return res.json(); })
+				.then(function (data) {
+					if (!data.success) throw new Error(data.message || 'Submission failed');
+					contactStatus.textContent = "Thank you — we've received your request and will be in touch shortly.";
+					contactStatus.classList.add('text-success', 'fw-bold');
+					contactForm.reset();
+				})
+				.catch(function () {
+					contactStatus.textContent = 'Something went wrong — please try again, or reach us directly via WhatsApp or email.';
+					contactStatus.classList.add('text-danger', 'fw-bold');
+				})
+				.finally(function () {
+					contactSubmitBtn.disabled = false;
+					contactSubmitBtn.textContent = 'Request a Consultation';
+				});
 		});
 	}
 
