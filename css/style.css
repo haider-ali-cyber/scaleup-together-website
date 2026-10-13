@@ -270,7 +270,9 @@ a:hover { color: var(--su-primary-dark); }
 .goog-te-banner-frame.skiptranslate { display: none !important; }
 body { top: 0 !important; }
 .goog-te-gadget { font-family: inherit !important; font-size: 0 !important; line-height: 1; }
-.goog-te-gadget img { display: none !important; }
+.goog-te-gadget img,
+.goog-te-gadget-icon { display: none !important; }
+/* classic <select>-based gadget (shown while the widget script loads) */
 .goog-te-gadget .goog-te-combo {
 	-webkit-appearance: none;
 	appearance: none;
@@ -285,6 +287,27 @@ body { top: 0 !important; }
 	margin: 0 !important;
 	cursor: pointer;
 }
+/* InlineLayout.SIMPLE renders its own boxed, bordered "Select Language"
+   control with a built-in arrow instead of a real <select> — strip all of
+   Google's own chrome so only our globe icon + text + chevron show */
+.goog-te-gadget-simple {
+	background: transparent !important;
+	border: none !important;
+	padding: 0 !important;
+	font-family: inherit !important;
+	display: inline-flex !important;
+	align-items: center;
+}
+.goog-te-gadget-simple .goog-te-menu-value {
+	color: #1c1c1c !important;
+	font-weight: 700;
+	font-size: 14px;
+}
+.goog-te-gadget-simple .goog-te-menu-value span {
+	color: inherit !important;
+	border: none !important;
+}
+.goog-te-gadget-simple .goog-te-menu-value-src-arrow { display: none !important; }
 .dropdown-menu { border: 1px solid var(--su-border); box-shadow: 0 10px 24px rgba(0,0,0,.08); }
 .dropdown-item:hover { background: var(--su-bg-light); color: var(--su-primary); }
 
