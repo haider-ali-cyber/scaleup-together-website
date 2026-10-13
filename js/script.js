@@ -16,15 +16,20 @@ document.addEventListener('DOMContentLoaded', function () {
 		var menuIsOpen = false;
 
 		// the floating-pill scroll state looks broken while the mobile menu
-		// dropdown is open, so suspend it for as long as the menu is open
+		// dropdown is open, so reset it to a plain full-width bar for as long
+		// as the menu is open — note: this must NOT remove is-scrolled itself,
+		// since on mobile the header falls back to position:static without it
+		// (removing is-scrolled mid-scroll used to make the header fly off
+		// screen with the page instead of staying pinned)
 		if (navbarCollapseEl) {
 			navbarCollapseEl.addEventListener('show.bs.collapse', function () {
 				menuIsOpen = true;
-				header.classList.remove('is-scrolled', 'header-hidden');
+				header.classList.add('menu-open');
+				header.classList.remove('header-hidden');
 			});
 			navbarCollapseEl.addEventListener('hidden.bs.collapse', function () {
 				menuIsOpen = false;
-				header.classList.toggle('is-scrolled', window.scrollY > 10);
+				header.classList.remove('menu-open');
 			});
 		}
 

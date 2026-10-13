@@ -183,6 +183,25 @@ a:hover { color: var(--su-primary-dark); }
 	padding: .5rem .6rem .5rem 1.25rem;
 	box-shadow: 0 10px 28px rgba(20,30,50,.16);
 }
+/* while the mobile menu dropdown is open, keep the header's scrolled
+   position:fixed (removing is-scrolled entirely breaks position on
+   mobile, since the header falls back to position:static there) but
+   reset the floating-pill shape back to a plain full-width bar so it
+   doesn't clash with the full-width dropdown list hanging below it */
+.site-header.is-scrolled.menu-open > .header-row {
+	width: 100%;
+	margin: 0;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 0;
+	background: #fff;
+	border-radius: 0;
+	padding: 1rem;
+	box-shadow: none;
+}
+.site-header.is-scrolled.menu-open .navbar-brand,
+.site-header.is-scrolled.menu-open .header-nav-slot,
+.site-header.is-scrolled.menu-open .hero-utility-bar { order: initial; }
 
 .navbar-brand { display: flex; flex-direction: row; align-items: center; gap: .6rem; text-decoration: none; }
 .brand-icon { height: 56px; width: auto; display: block; transform: translateY(-7px); }
