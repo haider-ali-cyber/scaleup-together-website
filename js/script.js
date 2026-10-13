@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (navbarCollapseEl) {
 			navbarCollapseEl.addEventListener('show.bs.collapse', function () {
 				menuIsOpen = true;
+				// a pending idle-hide timer from before the menu opened must not
+				// fire while (or after) the menu is open — it would slide the
+				// header away with the dropdown still showing
+				clearTimeout(headerHideTimer);
 				header.classList.add('menu-open');
 				header.classList.remove('header-hidden');
 			});
@@ -48,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			clearTimeout(headerHideTimer);
 			if (isScrolled) {
 				headerHideTimer = setTimeout(function () {
-					header.classList.add('header-hidden');
+					if (!menuIsOpen) header.classList.add('header-hidden');
 				}, 1200);
 			}
 		});
