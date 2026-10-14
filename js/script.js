@@ -293,6 +293,19 @@ document.addEventListener('DOMContentLoaded', function () {
 		window.history.replaceState(null, '', window.location.pathname);
 	}
 
+	// belt-and-suspenders removal of Google Translate's top banner iframe
+	// ("Translated into: X / Show original / Options") — CSS alone hides
+	// it, but this actively strips the element the moment it appears in
+	// case a future widget version changes its class names
+	var removeGoogleBanner = function () {
+		document.querySelectorAll('iframe.goog-te-banner-frame, .goog-te-banner-frame').forEach(function (el) {
+			el.remove();
+		});
+		document.body.style.top = '0px';
+	};
+	removeGoogleBanner();
+	new MutationObserver(removeGoogleBanner).observe(document.body, { childList: true, subtree: true });
+
 	// custom language switcher (flags + native names) — drives the real
 	// Google Translate widget, which is kept off-screen since its own
 	// picker UI renders inside a cross-origin iframe we can't restyle

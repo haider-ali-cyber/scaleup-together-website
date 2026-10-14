@@ -280,8 +280,17 @@ a:hover { color: var(--su-primary-dark); }
 	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
 }
-.goog-te-banner-frame.skiptranslate { display: none !important; }
-body { top: 0 !important; }
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate {
+	display: none !important;
+	visibility: hidden !important;
+	height: 0 !important;
+}
+body {
+	top: 0 !important;
+	position: static !important;
+}
 
 .lang-dropdown { position: relative; }
 .lang-dropdown-toggle {
