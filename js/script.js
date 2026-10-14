@@ -298,14 +298,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	// it, but this actively strips the element the moment it appears in
 	// case a future widget version changes its class names
 	var removeGoogleBanner = function () {
-		// Google obfuscates the banner's own class name per release, but
-		// always keeps it (and its wrapper div, a direct child of <body>)
-		// tagged "skiptranslate" — match on that instead of the exact class
-		Array.prototype.forEach.call(document.body.children, function (child) {
-			if (child.tagName === 'DIV' && child.classList.contains('skiptranslate')) {
-				child.remove();
-			}
-		});
 		document.querySelectorAll('iframe.goog-te-banner-frame, .goog-te-banner-frame').forEach(function (el) {
 			el.remove();
 		});

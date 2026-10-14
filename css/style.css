@@ -280,14 +280,9 @@ a:hover { color: var(--su-primary-dark); }
 	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
 }
-/* Google renames the banner iframe's own class to an obfuscated build
-   hash on every release (e.g. "VIpgJd-ZVi9od-ORHb-OEVmcd"), so targeting
-   that directly breaks whenever they ship an update — "skiptranslate" is
-   the one class name on it (and its wrapper) that's stayed stable */
-body > div.skiptranslate,
-iframe.skiptranslate,
 iframe.goog-te-banner-frame,
-.goog-te-banner-frame {
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate {
 	display: none !important;
 	visibility: hidden !important;
 	height: 0 !important;
