@@ -165,7 +165,7 @@ a:hover { color: var(--su-primary-dark); }
 	justify-content: space-between;
 	align-items: center;
 	padding-top: 1rem; padding-bottom: 1rem;
-	transition: width .3s ease, max-width .3s ease, padding .3s ease, gap .3s ease, border-radius .3s ease, background-color .3s ease, box-shadow .3s ease;
+	transition: width .12s ease, max-width .12s ease, padding .12s ease, gap .12s ease, border-radius .12s ease, background-color .12s ease, box-shadow .12s ease;
 }
 .site-header.is-scrolled > .header-row {
 	/* Bootstrap's .container max-width (on this same element) still caps
@@ -736,6 +736,19 @@ body { top: 0 !important; }
 	position: sticky;
 	background: #fff;
 	border-bottom: 1px solid var(--su-border);
+}
+/* .site-header--page and .site-header.is-scrolled have equal (two-class)
+   specificity, so on inner pages the later --page rule was winning the
+   position/background tie once scrolled — header stayed position:sticky
+   with its white background instead of switching to the floating-pill
+   treatment, which is what made the shape-change read as a jankier
+   "blink" there than on the homepage. This three-class rule outranks
+   both regardless of source order, so scrolled behavior now matches. */
+.site-header.site-header--page.is-scrolled {
+	position: fixed;
+	background: transparent;
+	border-bottom: none;
+	box-shadow: none;
 }
 .site-header.site-header--page .hero-utility-bar .in-icon-link { color: #1c1c1c; text-shadow: none; }
 .site-header.site-header--page .navbar-nav { background: var(--su-bg-light); }
