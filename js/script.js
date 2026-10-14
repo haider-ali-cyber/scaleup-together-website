@@ -78,6 +78,11 @@ document.addEventListener('DOMContentLoaded', function () {
 					if (menu) menu.classList.remove('show');
 				}
 			});
+			header.querySelectorAll('.lang-dropdown.is-open').forEach(function (dd) {
+				dd.classList.remove('is-open');
+				var langToggle = dd.querySelector('.lang-dropdown-toggle');
+				if (langToggle) langToggle.setAttribute('aria-expanded', 'false');
+			});
 		};
 
 		window.addEventListener('scroll', function () {
@@ -325,8 +330,9 @@ document.addEventListener('DOMContentLoaded', function () {
 			langDropdowns.forEach(function (dd) {
 				var activeBtn = dd.querySelector('[data-lang="' + langCode + '"]');
 				var flagEl = activeBtn ? activeBtn.querySelector('.lang-flag') : null;
-				var current = dd.querySelector('.lang-dropdown-current');
-				if (current) current.textContent = flagEl ? flagEl.textContent : '\u{1F1EC}\u{1F1E7}';
+				var currentFlag = dd.querySelector('.lang-dropdown-current .fi');
+				var countryClass = flagEl && flagEl.className.split(' ').filter(function (cls) { return cls.indexOf('fi-') === 0; })[0];
+				if (currentFlag) currentFlag.className = 'fi ' + (countryClass || 'fi-gb');
 				dd.querySelectorAll('[data-lang]').forEach(function (b) {
 					b.classList.toggle('is-active', b.getAttribute('data-lang') === langCode);
 				});
