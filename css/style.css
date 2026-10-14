@@ -165,8 +165,15 @@ a:hover { color: var(--su-primary-dark); }
 	justify-content: space-between;
 	align-items: center;
 	padding-top: 1rem; padding-bottom: 1rem;
+	transition: width .3s ease, max-width .3s ease, padding .3s ease, gap .3s ease, border-radius .3s ease, background-color .3s ease, box-shadow .3s ease;
 }
 .site-header.is-scrolled > .header-row {
+	/* Bootstrap's .container max-width (on this same element) still caps
+	   it alongside fit-content, which was squeezing the last item (the
+	   "Book a Private Consultation" button) past the pill's rounded edge
+	   once the language switcher made the row wider — override it so the
+	   pill can size itself purely from its own content */
+	max-width: calc(100vw - 2rem);
 	width: fit-content;
 	margin: 0 auto;
 	flex-wrap: nowrap;
