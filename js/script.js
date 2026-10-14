@@ -15,6 +15,31 @@ document.addEventListener('DOMContentLoaded', function () {
 		var navbarCollapseEl = header.querySelector('.navbar-collapse');
 		var menuIsOpen = false;
 		var scrollYAtMenuOpen = 0;
+		var mouseOverHeader = false;
+		// a single is-scrolled threshold flickers the header between its
+		// transparent-hero and scrolled-pill look when scrollY hovers right at
+		// that boundary (trackpad rubber-band/overscroll near the top settles
+		// a few px either side of it) — track state explicitly and only flip
+		// it once scrollY clears a gap on either side of the old threshold
+		var isScrolledState = false;
+
+		header.addEventListener('mouseenter', function () {
+			mouseOverHeader = true;
+			clearTimeout(headerHideTimer);
+			header.classList.remove('header-hidden');
+		});
+		header.addEventListener('mouseleave', function () {
+			mouseOverHeader = false;
+			if (isScrolledState && !menuIsOpen) {
+				clearTimeout(headerHideTimer);
+				headerHideTimer = setTimeout(function () {
+					if (!menuIsOpen && !mouseOverHeader) {
+						closeOpenDropdowns();
+						header.classList.add('header-hidden');
+					}
+				}, 1200);
+			}
+		});
 
 		// the floating-pill scroll state looks broken while the mobile menu
 		// dropdown is open, so reset it to a plain full-width bar for as long
@@ -70,13 +95,18 @@ document.addEventListener('DOMContentLoaded', function () {
 				}
 				return;
 			}
-			var isScrolled = window.scrollY > 10;
-			header.classList.toggle('is-scrolled', isScrolled);
-			header.classList.remove('header-hidden');
+			var y = window.scrollY;
+			if (!isScrolledState && y > 24) {
+				isScrolledState = true;
+			} else if (isScrolledState && y < 6) {
+				isScrolledState = false;
+			}
+			header.classList.toggle('is-scrolled', isScrolledState);
+			if (!mouseOverHeader) header.classList.remove('header-hidden');
 			clearTimeout(headerHideTimer);
-			if (isScrolled) {
+			if (isScrolledState && !mouseOverHeader) {
 				headerHideTimer = setTimeout(function () {
-					if (!menuIsOpen) {
+					if (!menuIsOpen && !mouseOverHeader) {
 						closeOpenDropdowns();
 						header.classList.add('header-hidden');
 					}
