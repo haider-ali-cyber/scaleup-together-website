@@ -259,55 +259,77 @@ a:hover { color: var(--su-primary-dark); }
 .navbar-nav .nav-link { color: #1c1c1c; font-weight: 700; padding: .85rem 1.1rem; }
 .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: var(--su-primary); }
 
-/* Google Translate widget — lives inside the nav pill as just another nav
-   item, with Google's default chrome (banner, icons, "Powered by", native
-   select arrow) stripped so it reads as a plain language switcher that
-   matches the rest of the nav instead of a Google-branded gadget */
+/* Language switcher — a fully custom dropdown (flags + native names) that
+   drives the real Google Translate widget behind the scenes. Google's own
+   picker renders its language list inside a cross-origin iframe we can't
+   restyle, so the widget itself is kept off-screen (not display:none,
+   since Google's init script can skip setting up a zero-size container)
+   and only our markup is visible. */
 .lang-switch-item { display: flex; align-items: center; }
-.lang-switch { display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 1.1rem; cursor: pointer; }
-.lang-switch-icon { color: var(--su-primary); font-size: .85rem; }
-.lang-switch-caret { color: #1c1c1c; font-size: .6rem; opacity: .6; pointer-events: none; }
+.lang-google-hidden {
+	position: absolute !important;
+	width: 1px; height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+}
 .goog-te-banner-frame.skiptranslate { display: none !important; }
 body { top: 0 !important; }
-.goog-te-gadget { font-family: inherit !important; font-size: 0 !important; line-height: 1; }
-.goog-te-gadget img,
-.goog-te-gadget-icon { display: none !important; }
-/* classic <select>-based gadget (shown while the widget script loads) */
-.goog-te-gadget .goog-te-combo {
-	-webkit-appearance: none;
-	appearance: none;
-	border: none !important;
-	outline: none;
-	background: transparent !important;
-	font-family: inherit !important;
-	font-size: 14px !important;
-	font-weight: 700;
-	color: #1c1c1c !important;
-	padding: 0 !important;
-	margin: 0 !important;
+
+.lang-dropdown { position: relative; }
+.lang-dropdown-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: .5rem;
+	padding: .85rem 1.1rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-family: inherit;
+}
+.lang-switch-icon { color: var(--su-primary); font-size: .85rem; }
+.lang-dropdown-current { font-size: 16px; line-height: 1; }
+.lang-switch-caret { color: #1c1c1c; font-size: .6rem; opacity: .6; transition: transform .2s ease; }
+.lang-dropdown.is-open .lang-switch-caret { transform: rotate(180deg); }
+.lang-dropdown-menu {
+	position: absolute;
+	top: 100%; right: 0;
+	margin-top: .5rem;
+	min-width: 190px;
+	max-height: 320px;
+	overflow-y: auto;
+	background: #fff;
+	border: 1px solid var(--su-border);
+	border-radius: 10px;
+	box-shadow: 0 16px 36px rgba(20,30,50,.18);
+	padding: .4rem;
+	list-style: none;
+	z-index: 1060;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-6px);
+	transition: opacity .15s ease, transform .15s ease, visibility .15s;
+}
+.lang-dropdown.is-open .lang-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.lang-dropdown-menu li { margin: 0; }
+.lang-dropdown-menu button {
+	display: flex;
+	align-items: center;
+	gap: .6rem;
+	width: 100%;
+	padding: .55rem .6rem;
+	background: none;
+	border: none;
+	border-radius: 7px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #1c1c1c;
+	text-align: left;
 	cursor: pointer;
 }
-/* InlineLayout.SIMPLE renders its own boxed, bordered "Select Language"
-   control with a built-in arrow instead of a real <select> — strip all of
-   Google's own chrome so only our globe icon + text + chevron show */
-.goog-te-gadget-simple {
-	background: transparent !important;
-	border: none !important;
-	padding: 0 !important;
-	font-family: inherit !important;
-	display: inline-flex !important;
-	align-items: center;
-}
-.goog-te-gadget-simple .goog-te-menu-value {
-	color: #1c1c1c !important;
-	font-weight: 700;
-	font-size: 14px;
-}
-.goog-te-gadget-simple .goog-te-menu-value span {
-	color: inherit !important;
-	border: none !important;
-}
-.goog-te-gadget-simple .goog-te-menu-value-src-arrow { display: none !important; }
+.lang-dropdown-menu button:hover,
+.lang-dropdown-menu button.is-active { background: var(--su-bg-light); color: var(--su-primary); }
+.lang-flag { font-size: 18px; line-height: 1; }
 .dropdown-menu { border: 1px solid var(--su-border); box-shadow: 0 10px 24px rgba(0,0,0,.08); }
 .dropdown-item:hover { background: var(--su-bg-light); color: var(--su-primary); }
 

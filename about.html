@@ -71,12 +71,26 @@
 							</ul>
 						</li>
 					<li class="nav-item lang-switch-item">
-									<span class="lang-switch">
+								<div class="lang-dropdown">
+									<button type="button" class="lang-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Choose language">
 										<i class="fas fa-globe lang-switch-icon"></i>
-										<span id="google_translate_element"></span>
+										<span class="lang-dropdown-current">🇬🇧</span>
 										<i class="fas fa-chevron-down lang-switch-caret"></i>
-									</span>
-								</li>
+									</button>
+									<ul class="lang-dropdown-menu">
+										<li><button type="button" data-lang="en"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span></button></li>
+										<li><button type="button" data-lang="ar"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span></button></li>
+										<li><button type="button" data-lang="ur"><span class="lang-flag">🇵🇰</span><span class="lang-name">اردو</span></button></li>
+										<li><button type="button" data-lang="hi"><span class="lang-flag">🇮🇳</span><span class="lang-name">हिन्दी</span></button></li>
+										<li><button type="button" data-lang="es"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span></button></li>
+										<li><button type="button" data-lang="vi"><span class="lang-flag">🇻🇳</span><span class="lang-name">Tiếng Việt</span></button></li>
+										<li><button type="button" data-lang="ms"><span class="lang-flag">🇲🇾</span><span class="lang-name">Bahasa Melayu</span></button></li>
+										<li><button type="button" data-lang="id"><span class="lang-flag">🇮🇩</span><span class="lang-name">Bahasa Indonesia</span></button></li>
+										<li><button type="button" data-lang="zh-CN"><span class="lang-flag">🇨🇳</span><span class="lang-name">中文</span></button></li>
+									</ul>
+								</div>
+								<div id="google_translate_element" class="lang-google-hidden"></div>
+							</li>
 							</ul>
 				</div>
 				</nav>
@@ -275,7 +289,6 @@
 			new google.translate.TranslateElement({
 				pageLanguage: "en",
 				includedLanguages: "ar,vi,ms,id,zh-CN,hi,ur,es",
-				layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
 				autoDisplay: false
 			}, "google_translate_element");
 		}
