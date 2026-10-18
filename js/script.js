@@ -396,6 +396,10 @@ document.addEventListener('DOMContentLoaded', function () {
 				});
 				var isOpen = dd.classList.toggle('is-open');
 				toggle.setAttribute('aria-expanded', isOpen);
+				// opening this inline (mobile) can itself shift scroll position
+				// as the panel grows — rebase the "did the user actually scroll
+				// away" reference point so that shift doesn't closeout the menu
+				if (typeof scrollYAtMenuOpen !== 'undefined') scrollYAtMenuOpen = window.scrollY;
 			});
 			dd.querySelectorAll('[data-lang]').forEach(function (btn) {
 				btn.addEventListener('click', function () {

@@ -1259,10 +1259,35 @@ body {
 		padding: 1rem 1.5rem;
 		border-bottom: 1px solid var(--su-border);
 	}
-	.navbar-nav .nav-item:last-child > .nav-link { border-bottom: none; }
+	.navbar-nav .nav-item:last-child > .nav-link,
+	.navbar-nav .nav-item:last-child .lang-dropdown-toggle { border-bottom: none; }
 	.navbar-collapse { padding: .5rem 0; }
 	.dropdown-menu { border: none; padding: 0 0 .5rem 1.5rem; background: var(--su-bg-light); margin: 0; }
 	.dropdown-item { padding: .6rem 1rem; }
+	/* the language switcher is last in a long stacked nav list, so its
+	   floating absolute menu (desktop CSS) could open mostly or entirely
+	   below the viewport — needing a page scroll to see it, which that
+	   scroll then got misread as "left the menu", closing it and letting
+	   the header auto-hide behind it. Expand it inline instead, same as
+	   the Services/Company/Resources dropdowns just above, so it only
+	   ever pushes the rest of the list down within the open panel. */
+	.lang-dropdown-toggle { width: 100%; justify-content: space-between; padding: 1rem 1.5rem; border-bottom: 1px solid var(--su-border); }
+	.lang-dropdown-menu {
+		position: static;
+		display: none;
+		opacity: 1;
+		visibility: visible;
+		transform: none;
+		width: 100%;
+		max-height: none;
+		margin: 0;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		background: var(--su-bg-light);
+		padding: .4rem 0 .4rem 1.5rem;
+	}
+	.lang-dropdown.is-open .lang-dropdown-menu { display: block; }
 	.hero-slideshow .carousel-caption { padding: 5rem 0; }
 	.header-row { position: relative; flex-wrap: nowrap; justify-content: space-between; }
 	.header-nav-slot { position: static; order: 2; flex: 0 0 auto; width: auto; margin-top: 0; margin-left: 1rem; }
