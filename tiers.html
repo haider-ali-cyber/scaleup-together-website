@@ -143,19 +143,19 @@
 					<span class="demo-trial-badge"><i class="fas fa-shield-halved"></i> Risk-Free</span>
 					<div class="row align-items-center g-4">
 						<div class="col-lg-7">
-							<span class="small text-uppercase eyebrow">See Real Results First</span>
-							<h2 class="mt-1">Watch Our Live Accounts Performance</h2>
-							<p class="mb-0">We run a live demo account at every plan's capital level, trading in real time with the same discipline we apply to funded accounts. Click any plan below to watch its real, verified performance on Myfxbook before you commit a single dollar of your own capital.</p>
+							<span class="small text-uppercase eyebrow">Try Before You Commit</span>
+							<h2 class="mt-1">Open a Demo Account</h2>
+							<p class="mb-0">Open a free demo account matching your chosen plan's capital level, and we'll actively trade it for you with the same discipline we apply to funded accounts — so you can see real results before committing a single dollar of your own capital.</p>
 						</div>
 						<div class="col-lg-5">
 							<div class="demo-trial-steps">
 								<div class="demo-trial-step">
 									<span class="demo-trial-num">1</span>
-									<div><strong>Pick a capital level</strong><span>Choose the plan closest to what you're considering</span></div>
+									<div><strong>Open a free demo account</strong><span><a href="https://one.exnessonelink.com/a/tokmuokm" target="_blank" rel="noopener">Open an Account</a>, matching your chosen plan's capital level</span></div>
 								</div>
 								<div class="demo-trial-step">
 									<span class="demo-trial-num">2</span>
-									<div><strong>Watch it trade, live</strong><span>Every trade, open and verified on Myfxbook</span></div>
+									<div><strong>We trade it live for you</strong><span>Same discipline and risk management as a funded account</span></div>
 								</div>
 								<div class="demo-trial-step">
 									<span class="demo-trial-num">3</span>
@@ -165,14 +165,38 @@
 						</div>
 					</div>
 					<div class="demo-trial-actions">
-						<a href="https://www.myfxbook.com/members/ScaleUpTogether" target="_blank" rel="noopener" class="btn btn-primary">Watch Live Performance</a>
+						<a href="https://one.exnessonelink.com/a/tokmuokm" target="_blank" rel="noopener" class="btn btn-primary">Open a Free Demo Account</a>
 						<a href="https://wa.me/000000000000" target="_blank" rel="noopener" class="btn btn-outline-primary">Contact Us on WhatsApp</a>
 					</div>
-					<p class="demo-trial-note">Demo account performance is not a guarantee of future results on a live account.</p>
+					<p class="demo-trial-note">Your demo account is free for the first 24 hours — a service fee applies after that. Demo account performance is not a guarantee of future results on a live account.</p>
 				</div>
 			</div>
 		</section>
 		<!-- demo trial end -->
+
+		<!-- demo fee popup begin -->
+		<div class="modal fade" id="demoFeeModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content demo-fee-modal">
+					<button type="button" class="btn-close demo-fee-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					<div class="modal-body">
+						<div class="demo-fee-modal-icon"><i class="fas fa-shield-halved"></i></div>
+						<h5 class="text-center mb-1">Try <span class="demo-fee-plan">Basic</span> Risk-Free</h5>
+						<p class="text-center text-muted mb-3">$<span class="demo-fee-capital">1,000</span> demo account, traded live for you</p>
+						<div class="demo-fee-amount-box">
+							<span class="small text-uppercase text-muted">Free For</span>
+							<strong>24 Hours</strong>
+						</div>
+						<p class="demo-fee-refund-note"><i class="fas fa-clock"></i> A service fee applies after the first 24 hours.</p>
+						<div class="d-grid gap-2 mt-3">
+							<a href="https://one.exnessonelink.com/a/tokmuokm" target="_blank" rel="noopener" data-bs-dismiss="modal" class="btn btn-primary">Continue to Open Account</a>
+							<button type="button" class="btn btn-link text-decoration-none" data-bs-dismiss="modal">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- demo fee popup end -->
 
 
 		<!-- plans accordion begin -->
@@ -224,7 +248,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="https://www.myfxbook.com/members/ScaleUpTogether/basic-1000/12253664/bAUR5FjE3kGzhut3AIjW" target="_blank" rel="noopener" class="demo-trial-link">Watch Basic's Live Account Performance <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Basic" data-capital="1,000">Try Basic risk-free first ($1,000 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -274,7 +298,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="https://www.myfxbook.com/members/ScaleUpTogether/starter-2500/12253384/XBgGG6TQNG3eACpS5W2A" target="_blank" rel="noopener" class="demo-trial-link">Watch Starter's Live Account Performance <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Starter" data-capital="2,500">Try Starter risk-free first ($2,500 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -324,7 +348,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="https://www.myfxbook.com/members/ScaleUpTogether/growth-5000/12253361/KyWfv7yo2LKTVgpEZloI" target="_blank" rel="noopener" class="demo-trial-link">Watch Growth's Live Account Performance <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Growth" data-capital="5,000">Try Growth risk-free first ($5,000 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -374,7 +398,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="https://www.myfxbook.com/members/ScaleUpTogether/pro-7500/12253357/Yjq2Jzl8QfC7i7m5fADw" target="_blank" rel="noopener" class="demo-trial-link">Watch Pro's Live Account Performance <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Pro" data-capital="7,500">Try Pro risk-free first ($7,500 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -424,7 +448,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-primary">Get Started</a>
-								<a href="https://www.myfxbook.com/members/ScaleUpTogether/elite-10000/12253345/K5gSrU327jbiDTE43UvO" target="_blank" rel="noopener" class="demo-trial-link">Watch Elite's Live Account Performance <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Elite" data-capital="10,000">Try Elite risk-free first ($10,000 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -474,7 +498,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="https://www.myfxbook.com/members/ScaleUpTogether/prime-12500/12253335/3cnHzZaR3GKyAPuL8Elo" target="_blank" rel="noopener" class="demo-trial-link">Watch Prime's Live Account Performance <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Prime" data-capital="12,500">Try Prime risk-free first ($12,500 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -524,7 +548,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="https://www.myfxbook.com/members/ScaleUpTogether/institutional-15000/12253332/pOHbxhtJJS8HjXPtjD0I" target="_blank" rel="noopener" class="demo-trial-link">Watch Institutional's Live Account Performance <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Institutional" data-capital="15,000">Try Institutional risk-free first ($15,000 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -574,7 +598,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="https://www.myfxbook.com/members/ScaleUpTogether/master-17500/12253326/0cCELgax1F31BTY8gEbg" target="_blank" rel="noopener" class="demo-trial-link">Watch Master's Live Account Performance <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Master" data-capital="17,500">Try Master risk-free first ($17,500 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -624,7 +648,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="https://www.myfxbook.com/members/ScaleUpTogether/supreme-20000/12253219/DfomDqZKjKGrGNVrQnc6" target="_blank" rel="noopener" class="demo-trial-link">Watch Supreme's Live Account Performance <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Supreme" data-capital="20,000">Try Supreme risk-free first ($20,000 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -674,7 +698,7 @@
 							</div>
 							<div class="plan-actions">
 								<a href="contact.html" class="btn btn-outline-primary">Get Started</a>
-								<a href="https://www.myfxbook.com/members/ScaleUpTogether/sovereign-25000/12253097/mEV3AdnfZODu98TDruCN" target="_blank" rel="noopener" class="demo-trial-link">Watch Sovereign's Live Account Performance <i class="fas fa-arrow-right"></i></a>
+								<a href="#demo-trial" class="demo-trial-link" data-plan="Sovereign" data-capital="25,000">Try Sovereign risk-free first ($25,000 demo) <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>

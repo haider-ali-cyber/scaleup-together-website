@@ -272,6 +272,24 @@ document.addEventListener('DOMContentLoaded', function () {
 		miniMeters.forEach(function (el) { miniMeterObserver.observe(el); });
 	}
 
+	// demo fee popup — shows the 24-hour free window before linking out to
+	// open a demo account, with the clicked plan's name/capital filled in
+	var demoFeeModalEl = document.getElementById('demoFeeModal');
+	var demoLinks = document.querySelectorAll('.demo-trial-link[data-plan]');
+	if (demoFeeModalEl && demoLinks.length && window.bootstrap) {
+		var demoFeeModal = new bootstrap.Modal(demoFeeModalEl);
+		var planEl = demoFeeModalEl.querySelector('.demo-fee-plan');
+		var capitalEl = demoFeeModalEl.querySelector('.demo-fee-capital');
+		demoLinks.forEach(function (link) {
+			link.addEventListener('click', function (e) {
+				e.preventDefault();
+				planEl.textContent = link.getAttribute('data-plan');
+				capitalEl.textContent = link.getAttribute('data-capital');
+				demoFeeModal.show();
+			});
+		});
+	}
+
 	// contact form submission via Web3Forms — a plain native POST (Web3Forms
 	// redirects back to the "redirect" hidden field's URL once it processes
 	// the submission), not a JS fetch(), since fetch()/AJAX submissions were
