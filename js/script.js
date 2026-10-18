@@ -280,11 +280,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		var demoFeeModal = new bootstrap.Modal(demoFeeModalEl);
 		var planEl = demoFeeModalEl.querySelector('.demo-fee-plan');
 		var capitalEl = demoFeeModalEl.querySelector('.demo-fee-capital');
+		var amountEl = demoFeeModalEl.querySelector('.demo-fee-amount');
 		demoLinks.forEach(function (link) {
 			link.addEventListener('click', function (e) {
 				e.preventDefault();
 				planEl.textContent = link.getAttribute('data-plan');
 				capitalEl.textContent = link.getAttribute('data-capital');
+				if (amountEl) amountEl.textContent = link.getAttribute('data-fee');
 				demoFeeModal.show();
 			});
 		});
