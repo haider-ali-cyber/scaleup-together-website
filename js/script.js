@@ -290,6 +290,15 @@ document.addEventListener('DOMContentLoaded', function () {
 				demoFeeModal.show();
 			});
 		});
+		// "Continue to Open Account" used data-bs-dismiss on the <a> itself,
+		// which was swallowing the click before the browser could navigate —
+		// let the link open Exness normally, then dismiss the modal after
+		var continueLink = demoFeeModalEl.querySelector('#demoFeeContinue');
+		if (continueLink) {
+			continueLink.addEventListener('click', function () {
+				setTimeout(function () { demoFeeModal.hide(); }, 100);
+			});
+		}
 	}
 
 	// contact form submission via Web3Forms — a plain native POST (Web3Forms
