@@ -53,10 +53,11 @@ Important account structure discussed:
 
 # 3. Investment / Profit-Sharing Tiers
 
-The latest tier structure provided by the user is:
+This is the current, live tier structure (as published on the website):
 
 | Tier | Starting Capital | Client Share | ScaleUp Share |
 |---|---:|---:|---:|
+| Basic | $1,000 | 25% | 75% |
 | Starter | $2,500 | 35% | 65% |
 | Growth | $5,000 | 40% | 60% |
 | Pro | $7,500 | 45% | 55% |
@@ -65,12 +66,16 @@ The latest tier structure provided by the user is:
 | Institutional | $15,000 | 60% | 40% |
 | Master | $17,500 | 65% | 35% |
 | Supreme | $20,000+ | 70% | 30% |
+| Sovereign | $25,000+ | 75% | 25% |
 
-**Elite ($10,000)** was discussed as the tier to visually emphasize as the preferred / most popular option.
+**Elite ($10,000)** is the tier visually emphasized as "Most Popular". **Sovereign ($25,000+)** is marked "Highest Plan". **Basic ($1,000)** is the entry-level tier.
 
 Example:
 - Elite: $10,000 account, $2,000 generated profit → Client gets $1,000 and ScaleUp gets $1,000.
 - Supreme: $20,000+ account, $2,000 generated profit → Client gets $1,400 and ScaleUp gets $600.
+- Sovereign: $25,000+ account, $2,000 generated profit → Client gets $1,500 and ScaleUp gets $500.
+
+Each plan also offers a free demo account (via the site's Exness referral link) — free for the first 24 hours, after which a scaled service fee applies ($10 for Basic up to $100 for Sovereign, in $10 steps).
 
 IMPORTANT:
 Before publishing fee/profit-sharing claims, define:
@@ -99,56 +104,7 @@ Recommended wording:
 
 ---
 
-# 4. Compliance / Regulatory Considerations
-
-This is a financial-services project. Legal status must be verified before making regulatory claims.
-
-We researched Pakistan regulatory sources and found:
-
-### SECP
-Securities/futures advisory activities are regulated and require appropriate licensing.
-
-Relevant SECP pages:
-- Securities Advisors and Futures Advisors:
-  https://www.secp.gov.pk/licensing/capital-markets/securities-advisors-and-futures-advisor/
-- Investment Advisory Services:
-  https://www.secp.gov.pk/licensing/nbfcs/investment-advisory-services/
-- Asset Management Services:
-  https://www.secp.gov.pk/licensing/nbfcs/asset-management-services/
-- Securities Managers regulations:
-  https://www.secp.gov.pk/media-center/press-releases/secp-notifies-regulations-for-securities-managers/
-
-SECP materials indicate that certain portfolio-management activities require appropriate authorization/licensing.
-
-### State Bank of Pakistan
-SBP has warned about offshore FX trading websites/apps offered to Pakistan residents, including platforms such as OctaFX and Easy Forex, and highlighted foreign-exchange-law considerations.
-
-Relevant SBP notice:
-https://www.sbp.org.pk/press/2022/Pr-18-May-2022.pdf
-
-Therefore, before launch/ads:
-1. Verify M Itrut's exact legal status.
-2. Verify company registration.
-3. Verify applicable SECP license/registration.
-4. Verify broker and broker jurisdiction.
-5. Verify whether the intended trading/account-management structure is legally permitted.
-6. Verify trading authorization / power-of-attorney structure.
-7. Verify fee collection and profit-sharing mechanism.
-8. Verify withdrawal rules.
-9. Verify all website disclosures.
-
-Never claim:
-- "SECP regulated"
-- "SECP licensed"
-- "Government approved"
-- "Guaranteed"
-unless documentary evidence confirms the exact claim.
-
-Competitor websites are references for UX/positioning only and are NOT endorsements of their regulatory status.
-
----
-
-# 5. Competitor / Reference Websites
+# 4. Competitor / Reference Websites
 
 We researched several websites.
 
@@ -258,7 +214,7 @@ Useful for:
 
 ---
 
-# 6. Website Direction
+# 5. Website Direction
 
 The agreed design concept:
 
@@ -296,7 +252,7 @@ DO NOT copy competitors directly. Use them only as inspiration.
 
 ---
 
-# 7. Website Sitemap
+# 6. Website Sitemap
 
 Recommended pages:
 
@@ -331,7 +287,7 @@ Homepage flow:
 
 ---
 
-# 8. Design Direction
+# 7. Design Direction
 
 The biggest lesson from the generated AI mockups:
 
@@ -373,7 +329,7 @@ NOT:
 
 ---
 
-# 9. Color Palette Discussion
+# 8. Color Palette Discussion
 
 Gold is NOT mandatory.
 
@@ -425,7 +381,7 @@ Deep Green + Gold — wealth/finance/established feel.
 
 ---
 
-# 10. Typography
+# 9. Typography
 
 Recommended:
 
@@ -447,7 +403,7 @@ Use:
 
 ---
 
-# 11. Logo Direction
+# 10. Logo Direction
 
 Brand:
 SCALEUP TOGETHER
@@ -479,7 +435,7 @@ The exact final logo has not yet been explicitly selected.
 
 ---
 
-# 12. Website Visual Mockup Lessons
+# 11. Website Visual Mockup Lessons
 
 An earlier mockup used:
 - Dark navy/charcoal
@@ -509,7 +465,7 @@ The improved direction was:
 
 ---
 
-# 13. Hero Concept
+# 12. Hero Concept
 
 Preferred hero direction:
 
@@ -544,7 +500,7 @@ Visual:
 
 ---
 
-# 14. Trust Section
+# 13. Trust Section
 
 Suggested heading:
 > A more disciplined way to approach the markets.
@@ -560,7 +516,7 @@ Four minimal pillars:
 
 ---
 
-# 15. Client-Control Section
+# 14. Client-Control Section
 
 Important section:
 
@@ -588,7 +544,7 @@ Use legal qualifier:
 
 ---
 
-# 16. Investment Tier Section
+# 15. Investment Tier Section
 
 Heading:
 > Choose Your Tier.
@@ -596,8 +552,8 @@ Heading:
 Subheading:
 > Select the level that aligns with your capital and objectives.
 
-Use 8 premium cards:
-Starter / Growth / Pro / Elite / Prime / Institutional / Master / Supreme
+Use 10 premium cards (current live lineup):
+Basic / Starter / Growth / Pro / Elite / Prime / Institutional / Master / Supreme / Sovereign
 
 Elite:
 - $10,000
@@ -605,12 +561,18 @@ Elite:
 - 50% ScaleUp Share
 - "Most Popular"
 
+Sovereign:
+- $25,000+
+- 75% Client Share
+- 25% ScaleUp Share
+- "Highest Plan"
+
 Cards should be flat, minimal and elegant.
 Not SaaS-like.
 
 ---
 
-# 17. How It Works
+# 16. How It Works
 
 Five steps:
 
@@ -637,7 +599,7 @@ Use:
 
 ---
 
-# 18. Investment Philosophy
+# 17. Investment Philosophy
 
 Suggested concept:
 
@@ -662,7 +624,7 @@ Visual:
 
 ---
 
-# 19. Founder Section
+# 18. Founder Section
 
 Founder:
 **M Itrut**
@@ -684,7 +646,7 @@ unless verified.
 
 ---
 
-# 20. Performance Section
+# 19. Performance Section
 
 Only use real verified data.
 
@@ -702,7 +664,7 @@ Never invent performance numbers or screenshots.
 
 ---
 
-# 21. FAQ
+# 20. FAQ
 
 Suggested questions:
 
@@ -720,7 +682,7 @@ Answer risk questions carefully and legally.
 
 ---
 
-# 22. Final CTA
+# 21. Final CTA
 
 Heading:
 > Your Capital Deserves a Disciplined Approach.
@@ -736,7 +698,7 @@ Small text:
 
 ---
 
-# 23. Marketing Strategy
+# 22. Marketing Strategy
 
 Do not initially market with:
 - "Give us your money"
@@ -780,7 +742,7 @@ Not:
 
 ---
 
-# 24. Target Audience
+# 23. Target Audience
 
 Primary audience:
 - Serious investors
@@ -793,7 +755,7 @@ The user originally considered targeting iPhone users as an affluent signal. We 
 
 ---
 
-# 25. Social Media Content Pillars
+# 24. Social Media Content Pillars
 
 Recommended:
 
@@ -824,7 +786,7 @@ Subtle premium imagery, not flashy wealth flex.
 
 ---
 
-# 26. Meta Ads Strategy
+# 25. Meta Ads Strategy
 
 Start with:
 - Education
@@ -850,7 +812,7 @@ The ad should qualify the audience rather than attract everyone.
 
 ---
 
-# 27. Lovable Website Build Prompt Direction
+# 26. Lovable Website Build Prompt Direction
 
 The user plans to use **Lovable** to build the website.
 
@@ -890,7 +852,7 @@ Homepage sections:
 
 ---
 
-# 28. Exact Design Philosophy to Give Claude
+# 27. Exact Design Philosophy to Give Claude
 
 Claude should understand this project as:
 
@@ -928,7 +890,7 @@ NOT because of:
 
 ---
 
-# 29. Current Decision Point
+# 28. Current Decision Point
 
 The user currently wants to test the website visually and is considering two palettes:
 
@@ -947,7 +909,7 @@ The next logical step is to build/test the same homepage using the two palettes 
 
 ---
 
-# 30. Instructions for Claude
+# 29. Instructions for Claude
 
 When continuing this project:
 
