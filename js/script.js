@@ -123,8 +123,20 @@ document.addEventListener('DOMContentLoaded', function () {
 	// back to top button
 	var toTop = document.querySelector('.to-top');
 	if (toTop) {
+		// same flicker as the header had: a single scroll threshold with no
+		// hysteresis toggles the button on/off repeatedly when scrollY hovers
+		// right at that boundary (rubber-band overscroll, or — on very tall
+		// viewports — the whole page's scroll range sitting close to it) —
+		// track state explicitly with a gap on either side, like the header
+		var toTopShown = false;
 		window.addEventListener('scroll', function () {
-			toTop.classList.toggle('show', window.scrollY > 400);
+			var y = window.scrollY;
+			if (!toTopShown && y > 420) {
+				toTopShown = true;
+			} else if (toTopShown && y < 380) {
+				toTopShown = false;
+			}
+			toTop.classList.toggle('show', toTopShown);
 		});
 		toTop.addEventListener('click', function (e) {
 			e.preventDefault();

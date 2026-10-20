@@ -1238,10 +1238,17 @@ body {
 	color: #fff; font-size: 1.2rem;
 	display: flex; align-items: center; justify-content: center;
 	box-shadow: 0 10px 26px rgba(31,78,140,.35);
-	transition: opacity .25s ease, transform .2s ease;
+	/* faded via opacity/visibility, not display:none <-> flex — toggling
+	   display can't transition, so it was popping in/out instantly instead
+	   of fading, which read as a flicker right at the scroll threshold */
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(8px);
+	pointer-events: none;
+	transition: opacity .25s ease, transform .25s ease, visibility .25s;
 }
 .to-top:hover { transform: scale(1.06); color: #fff; }
-.to-top.show { display: flex !important; }
+.to-top.show { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
 
 @media (max-width: 1199.98px) {
 	.site-header { position: static; background: #fff; border-bottom: 1px solid var(--su-border); }
