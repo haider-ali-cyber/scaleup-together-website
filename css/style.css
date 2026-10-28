@@ -1358,3 +1358,122 @@ body {
 	.floating-contact-item { padding: .55rem; border-radius: 50%; }
 	.floating-contact-item i { background: transparent; }
 }
+
+/* ==========================================================================
+   Dark mode — follows the visitor's OS/browser preference automatically
+   (no on-site toggle). Additive only: nothing above this point is touched,
+   so light mode is unaffected. Two layers:
+   1) redefine the --su-* tokens, which most of the site already reads from
+      (nav pills, borders, muted text, section backgrounds, accents) —
+      this alone re-themes the majority of the page.
+   2) explicit overrides for the ~100 spots that hardcode #fff / #1c1c1c
+      instead of a token (card surfaces, headings, forms, Bootstrap's own
+      component defaults), grouped by what they become.
+   Several sections (stats strip, profit-gauge cards, plans-hero strip,
+   services-visual) are already dark-navy with white text by design in
+   light mode too — intentionally left alone here.
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--su-primary: #5B9FE8;
+		--su-primary-dark: #7FB4F0;
+		--su-secondary: #0E1B30;
+		--su-purple: #202A3D;
+		--su-purple-text: #A9C3E8;
+		--su-salmon: #202A3D;
+		--su-salmon-text: #A9C3E8;
+		--su-body: #AEB8C7;
+		--su-border: #2A3444;
+		--su-bg-light: #18212F;
+		--su-white: #111926;
+	}
+
+	body { background-color: #0C121C; color: var(--su-body); }
+	main, footer { background-color: #0C121C; }
+
+	h1, h2, h3, h4, h5, h6 { color: #F0F3F8; }
+
+	/* page/hero backdrops (near-white in light mode) */
+	.hero-wrap, .page-banner { background-color: #0C121C; background-image: none; }
+
+	/* card / panel surfaces that hardcode #fff */
+	.site-header.is-scrolled > .header-row,
+	.site-header.is-scrolled.menu-open > .header-row,
+	.site-header.site-header--page,
+	.lang-dropdown-menu,
+	.hero-float-badge,
+	.badge-card,
+	.steps-section,
+	.service-card,
+	.tier-card,
+	.percent-gauge-track,
+	.plans-accordion,
+	.demo-trial-card,
+	.example-card,
+	.insight-card,
+	.contact-form,
+	.floating-contact-item,
+	.navbar,
+	.header-nav-slot .navbar-collapse,
+	.dropdown-menu,
+	.modal-content {
+		background-color: var(--su-white);
+	}
+	@media (max-width: 1199.98px) {
+		.site-header { background-color: var(--su-white); }
+	}
+
+	/* text that hardcodes #1c1c1c instead of reading the heading color */
+	.navbar-nav .nav-link,
+	.hero-float-badge,
+	.badge-card li,
+	.service-pill span,
+	.optional-link .in-icon-link,
+	.hero-utility-bar .in-icon-link,
+	.site-header.is-scrolled .hero-utility-bar .in-icon-link,
+	.site-header.site-header--page .hero-utility-bar .in-icon-link,
+	.plan-name,
+	.demo-trial-step strong,
+	.news-list a.h6,
+	.contact-info-item,
+	.contact-form .form-label,
+	.social-media-list a,
+	.lang-switch-caret,
+	.lang-dropdown-menu button,
+	.icon-wrap:not(.rounded-circle),
+	.floating-contact-item,
+	.faq-section .accordion-button,
+	.demo-fee-modal h5,
+	.offcanvas-title {
+		color: #F0F3F8;
+	}
+	.plan-split-mini .gauge-tick-label { fill: #F0F3F8; }
+	.mini-meter-needle { stroke: #F0F3F8; }
+
+	/* Bootstrap's own component defaults (form controls, accordion, modal,
+	   dropdown items) are white-on-dark-text regardless of our tokens */
+	.form-control, .form-select {
+		background-color: var(--su-white);
+		color: #F0F3F8;
+		border-color: var(--su-border);
+	}
+	.form-control::placeholder { color: #6b7686; }
+	.form-control:focus, .form-select:focus { background-color: var(--su-white); color: #F0F3F8; }
+	.dropdown-item { color: var(--su-body); }
+	.dropdown-item:hover, .dropdown-item:focus { background-color: var(--su-bg-light); color: #F0F3F8; }
+	.accordion-button { color: #F0F3F8; }
+	.accordion-button::after { filter: invert(1) brightness(1.8); }
+	.btn-close { filter: invert(1) brightness(1.8); }
+
+	/* the logo is a dark-navy gradient — invert it to a clean white mark
+	   rather than shipping a second asset */
+	.brand-icon, .wordmark-scaleup { filter: brightness(0) invert(1); }
+
+	/* Google Translate's own picker renders in an iframe we can't theme,
+	   and the demo-fee modal's icon circle is tuned for a light bg */
+	.demo-fee-modal-icon, .insight-icon, .news-thumb { background-color: var(--su-bg-light); }
+
+	/* Bootstrap's own muted-gray utility, tuned for a white background —
+	   used throughout (card subtext, modal captions, etc.) */
+	.text-muted { color: #8893A3 !important; }
+}
