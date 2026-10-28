@@ -1434,14 +1434,17 @@ body {
 	.insight-card,
 	.contact-form,
 	.floating-contact-item,
-	.navbar,
-	.header-nav-slot .navbar-collapse,
 	.dropdown-menu,
 	.modal-content {
 		background-color: var(--su-white);
 	}
+	/* .navbar and .header-nav-slot .navbar-collapse are only ever #fff in
+	   light mode inside this same mobile breakpoint (desktop has them
+	   transparent, relying on .site-header's own background) — putting them
+	   in the unconditional group above was giving the homepage's full-width
+	   non-scrolled nav row a solid dark backing rectangle on desktop too */
 	@media (max-width: 1199.98px) {
-		.site-header { background-color: var(--su-white); }
+		.site-header, .navbar, .header-nav-slot .navbar-collapse { background-color: var(--su-white); }
 	}
 
 	/* text that hardcodes #1c1c1c instead of reading the heading color */
