@@ -1395,6 +1395,10 @@ body {
 
 	/* page/hero backdrops (near-white in light mode) */
 	.hero-wrap, .page-banner { background-color: #0C121C; background-image: none; }
+	/* the faint grayscale skyline silhouette blended into the light backdrop
+	   by design — against the new dark backdrop it reads as a visible pale
+	   smudge/line instead, so hide it in dark mode */
+	.hero-wrap::before { display: none; }
 
 	/* card / panel surfaces that hardcode #fff */
 	.site-header.is-scrolled > .header-row,
