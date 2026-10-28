@@ -5,6 +5,12 @@
    ========================================================================== */
 
 :root {
+	/* tells the browser this page manages its own light/dark styling, so
+	   browser-level "force dark mode" features (Edge/Chrome's own color
+	   inversion heuristics) don't double-process it on top of our real
+	   dark-mode CSS — that double processing is what was turning some text
+	   yellow and leaving stray artifacts from the light-mode decoration */
+	color-scheme: light dark;
 	--su-primary: #1F4E8C;
 	--su-primary-dark: #163a68;
 	--su-secondary: #14294D;
