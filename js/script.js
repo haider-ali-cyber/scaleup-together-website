@@ -332,6 +332,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		contactStatus.textContent = "Thank you — we've received your request and will be in touch shortly.";
 		contactStatus.classList.add('text-success', 'fw-bold');
 		window.history.replaceState(null, '', window.location.pathname);
+		if (typeof fbq === 'function') fbq('track', 'Lead');
 	}
 
 	// belt-and-suspenders removal of Google Translate's top banner iframe
