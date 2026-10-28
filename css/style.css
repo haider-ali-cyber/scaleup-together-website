@@ -1410,13 +1410,12 @@ body {
 	   light mode since its bg-light tint barely differed from the near-white
 	   page behind it — that same flat --su-bg-light reads as a stark dark
 	   box against the even-darker page here, with its rounded bottom edge
-	   looking like a stray line. A faint white-tint overlay instead keeps
-	   the same barely-there blend light mode had. */
-	/* lower specificity than the existing .is-scrolled (stays transparent)
+	   looking like a stray line. Dropped entirely here instead of tinted —
+	   lower specificity than the existing .is-scrolled (stays transparent)
 	   and .site-header--page (keeps its solid --su-bg-light) overrides, so
 	   this only affects the homepage's non-scrolled, transparent-over-hero
-	   header — exactly the case that needed the subtler tint */
-	.navbar-nav { background: rgba(255,255,255,.05); }
+	   header — exactly the case that needed it gone. */
+	.navbar-nav { background: transparent; }
 
 	/* card / panel surfaces that hardcode #fff */
 	.site-header.is-scrolled > .header-row,
