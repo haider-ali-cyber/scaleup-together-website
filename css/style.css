@@ -252,6 +252,25 @@ a:hover { color: var(--su-primary-dark); }
 .site-header.is-scrolled .hero-utility-bar .in-icon-link { color: #1c1c1c; text-shadow: none; }
 
 .navbar { background: transparent; }
+/* plain Bootstrap default toggler (thin gray border, faint icon) was
+   blending into the header on mobile — give it a solid brand-color
+   button so it reads as a clear "open menu" affordance */
+.navbar-toggler {
+	width: 46px; height: 46px;
+	display: flex; align-items: center; justify-content: center;
+	background: var(--su-primary);
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 6px 16px rgba(31,78,140,.35);
+	padding: 0;
+	transition: background .2s ease;
+}
+.navbar-toggler:hover { background: var(--su-primary-dark); }
+.navbar-toggler:focus { box-shadow: 0 6px 16px rgba(31,78,140,.35); outline: none; }
+.navbar-toggler-icon {
+	width: 20px; height: 20px;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
 .header-nav-slot {
 	order: 3;
 	flex: 0 0 100%;
