@@ -1060,6 +1060,13 @@ body {
 .demo-trial-link i { font-size: .7rem; transition: transform .2s ease; }
 .demo-trial-link:hover { color: #D98C3D; }
 .demo-trial-link:hover i { transform: translateX(3px); }
+.myfxbook-link {
+	display: inline-flex; align-items: center; gap: .4rem;
+	margin: 0; font-size: .82rem; font-weight: 700;
+	color: var(--su-primary); text-decoration: none;
+}
+.myfxbook-link i { font-size: .75rem; }
+.myfxbook-link:hover { color: var(--su-primary-dark); text-decoration: underline; }
 
 /* demo trial callout */
 .demo-trial-card {
